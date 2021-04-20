@@ -19,6 +19,8 @@ struct BrewView: View {
         content
     }
     
+    @State private var showingSheet = false
+    
     private var content: some View {
         ZStack(alignment: .center)  {
             HStack() {
@@ -39,17 +41,26 @@ struct BrewView: View {
                     Text("SG: " + brew.sg)
                     Text("info")
                     HStack{
-                        Button("Alert") {}
+                        Button("Alerts") {
+                            showingSheet = true
+                        }
                             .buttonStyle(AlertsButton())
-                        Button("Readings") {}
-                            .buttonStyle(ReadingsButton())
+                            .actionSheet(isPresented: $showingSheet) {
+                                    ActionSheet(
+                                        title: Text("What do you want to do?"),
+                                        message: Text("There's only one choice..."),
+                                        buttons: [.default(Text("Dismiss Action Sheet"))]
+                                    )
+                                }
+                        
                         NavigationLink(destination: ReadingsView()) {
-                            Text("Readings Button")
-                            .frame(minWidth: 0, maxWidth: 300)
+                            Text("Readings")
+                            
                             .padding()
                             .foregroundColor(.white)
-                            .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .trailing))
-                            .cornerRadius(40)
+                            .background(Color.bottleGreen)
+                            //.background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .trailing))
+                            .cornerRadius(20)
                         }
                     }
                 }
