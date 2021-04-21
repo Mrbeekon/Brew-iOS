@@ -36,7 +36,7 @@ struct AddSheetView: View {
                         newBrew.id = UUID()
                         do {
                             try viewContext.save()
-                            print("Order saved")
+                            print("Brew saved")
                             presentationMode.wrappedValue.dismiss()
                             } catch {
                                 print(error.localizedDescription)

@@ -23,7 +23,6 @@
 		2256D0F22608DA6900C61DC7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2256D0F12608DA6900C61DC7 /* Preview Assets.xcassets */; };
 		2256D0FD2608DA6900C61DC7 /* BubblerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256D0FC2608DA6900C61DC7 /* BubblerTests.swift */; };
 		2256D1082608DA6900C61DC7 /* BubblerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256D1072608DA6900C61DC7 /* BubblerUITests.swift */; };
-		2256D11A2608E9B500C61DC7 /* Brew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256D1182608E9B400C61DC7 /* Brew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +45,8 @@
 /* Begin PBXFileReference section */
 		2222844826303A6C00BA5FC8 /* BrewModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BrewModel.xcdatamodel; sourceTree = "<group>"; };
 		222284DF26303F1C00BA5FC8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		222284EA263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BrewEntity+CoreDataClass.swift"; path = "Bubbler/BrewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		222284EB263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BrewEntity+CoreDataProperties.swift"; path = "Bubbler/BrewEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		222284EA263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		222284EB263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrewEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		222284F426304B7100BA5FC8 /* AlertsSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsSheetView.swift; sourceTree = "<group>"; };
 		222284FC263074D000BA5FC8 /* AddSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSheetView.swift; sourceTree = "<group>"; };
 		222D50BE262EE47400B69BEF /* BrewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewsListView.swift; sourceTree = "<group>"; };
@@ -66,7 +65,6 @@
 		2256D1032608DA6900C61DC7 /* BubblerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BubblerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2256D1072608DA6900C61DC7 /* BubblerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblerUITests.swift; sourceTree = "<group>"; };
 		2256D1092608DA6900C61DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2256D1182608E9B400C61DC7 /* Brew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +95,8 @@
 		222D50EC2630360C00B69BEF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2256D1182608E9B400C61DC7 /* Brew.swift */,
+				222284EA263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift */,
+				222284EB263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -118,8 +117,6 @@
 		2256D0DE2608DA6800C61DC7 = {
 			isa = PBXGroup;
 			children = (
-				222284EA263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift */,
-				222284EB263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift */,
 				2256D0E92608DA6800C61DC7 /* Bubbler */,
 				2256D0FB2608DA6900C61DC7 /* BubblerTests */,
 				2256D1062608DA6900C61DC7 /* BubblerUITests */,
@@ -317,7 +314,6 @@
 				222284E026303F1C00BA5FC8 /* Persistence.swift in Sources */,
 				222284FD263074D000BA5FC8 /* AddSheetView.swift in Sources */,
 				222284ED263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift in Sources */,
-				2256D11A2608E9B500C61DC7 /* Brew.swift in Sources */,
 				222D50DA262F2B4400B69BEF /* ReadingsView.swift in Sources */,
 				2256D0EB2608DA6800C61DC7 /* BubblerApp.swift in Sources */,
 				222284F526304B7100BA5FC8 /* AlertsSheetView.swift in Sources */,

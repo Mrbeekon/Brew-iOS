@@ -41,7 +41,6 @@ struct BrewView: View {
                 VStack{
                     Text("OG: " + (brew.og ?? "N/A"))
                     Text("SG: " + (brew.sg ?? "N/A"))
-                    Text("info")
                     HStack{
                         Button("Alerts") {
                             showAlertsSheet = true
