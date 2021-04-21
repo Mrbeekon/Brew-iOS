@@ -12,10 +12,10 @@ import SwiftUI
 
 struct BrewView: View {
     
-    @State private var showingSheet = false
+    @State private var showAlertsSheet = false
     @State var tableNumber = ""
     
-    let brew: Brew
+    let brew: BrewEntity
     
     let isExpanded: Bool
     
@@ -28,7 +28,7 @@ struct BrewView: View {
             HStack() {
                 Text(brew.name)
                 Spacer()
-                Text(brew.abv)
+                Text(brew.abv ?? "N/A")
                     .font(.subheadline)
             }
             .frame(width: 375, height:60, alignment: .topLeading)
@@ -39,20 +39,16 @@ struct BrewView: View {
             
             if isExpanded {
                 VStack{
-                    Text("OG: " + brew.og)
-                    Text("SG: " + brew.sg)
+                    Text("OG: " + (brew.og ?? "N/A"))
+                    Text("SG: " + (brew.sg ?? "N/A"))
                     Text("info")
                     HStack{
                         Button("Alerts") {
-                            showingSheet = true
+                            showAlertsSheet = true
                         }
                             .buttonStyle(AlertsButton())
-                            .actionSheet(isPresented: $showingSheet) {
-                                    ActionSheet(
-                                        title: Text("What do you want to do?"),
-                                        message: Text("There's only one choice..."),
-                                        buttons: [.default(Text("Dismiss Action Sheet"))]
-                                    )
+                            .sheet(isPresented: $showAlertsSheet) {
+                                    AlertsSheetView()
                                 }
                         
                         NavigationLink(destination: ReadingsView()) {

@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct BrewsListView: View {
-    let brews: [Brew]
-    @State private var selection: Set<Brew> = []
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(entity: BrewEntity.entity(), sortDescriptors: [])
+    var brews: FetchedResults<BrewEntity>
+    
+    @State private var selection: Set<BrewEntity> = []
     
     func delete(at offsets: IndexSet) {
         print("delete")
@@ -28,7 +31,7 @@ struct BrewsListView: View {
         
     }
     
-    func selectDeselect(_ brew: Brew) {
+    func selectDeselect(_ brew: BrewEntity) {
         print("Selected \(brew.id)")
         if selection.contains(brew) {
             selection.remove(brew)

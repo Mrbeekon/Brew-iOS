@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-extension BrewEntity {
+extension BrewEntity: Identifiable{
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<BrewEntity> {
         return NSFetchRequest<BrewEntity>(entityName: "BrewEntity")
@@ -22,9 +22,10 @@ extension BrewEntity {
     @NSManaged public var name: String
     @NSManaged public var og: String?
     @NSManaged public var sg: String?
+    @NSManaged public var startDate: Date
 
 }
 
-extension BrewEntity : Identifiable {
+/*extension BrewEntity : Identifiable {
 
-}
+}*/

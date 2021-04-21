@@ -11,7 +11,8 @@
 		222284E026303F1C00BA5FC8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284DF26303F1C00BA5FC8 /* Persistence.swift */; };
 		222284EC263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284EA263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift */; };
 		222284ED263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284EB263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift */; };
-		222284F526304B7100BA5FC8 /* AddSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284F426304B7100BA5FC8 /* AddSheet.swift */; };
+		222284F526304B7100BA5FC8 /* AlertsSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284F426304B7100BA5FC8 /* AlertsSheetView.swift */; };
+		222284FD263074D000BA5FC8 /* AddSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284FC263074D000BA5FC8 /* AddSheetView.swift */; };
 		222D50BF262EE47400B69BEF /* BrewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D50BE262EE47400B69BEF /* BrewsListView.swift */; };
 		222D50CA262EE6DF00B69BEF /* BrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D50C9262EE6DF00B69BEF /* BrewView.swift */; };
 		222D50D2262F235F00B69BEF /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D50D1262F235F00B69BEF /* Styles.swift */; };
@@ -47,7 +48,8 @@
 		222284DF26303F1C00BA5FC8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		222284EA263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BrewEntity+CoreDataClass.swift"; path = "Bubbler/BrewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		222284EB263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BrewEntity+CoreDataProperties.swift"; path = "Bubbler/BrewEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		222284F426304B7100BA5FC8 /* AddSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSheet.swift; sourceTree = "<group>"; };
+		222284F426304B7100BA5FC8 /* AlertsSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsSheetView.swift; sourceTree = "<group>"; };
+		222284FC263074D000BA5FC8 /* AddSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSheetView.swift; sourceTree = "<group>"; };
 		222D50BE262EE47400B69BEF /* BrewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewsListView.swift; sourceTree = "<group>"; };
 		222D50C9262EE6DF00B69BEF /* BrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewView.swift; sourceTree = "<group>"; };
 		222D50D1262F235F00B69BEF /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
@@ -107,7 +109,8 @@
 				222D50BE262EE47400B69BEF /* BrewsListView.swift */,
 				222D50C9262EE6DF00B69BEF /* BrewView.swift */,
 				222D50D9262F2B4400B69BEF /* ReadingsView.swift */,
-				222284F426304B7100BA5FC8 /* AddSheet.swift */,
+				222284F426304B7100BA5FC8 /* AlertsSheetView.swift */,
+				222284FC263074D000BA5FC8 /* AddSheetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -312,11 +315,12 @@
 				222D50D2262F235F00B69BEF /* Styles.swift in Sources */,
 				2222844926303A6C00BA5FC8 /* BrewModel.xcdatamodeld in Sources */,
 				222284E026303F1C00BA5FC8 /* Persistence.swift in Sources */,
+				222284FD263074D000BA5FC8 /* AddSheetView.swift in Sources */,
 				222284ED263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift in Sources */,
 				2256D11A2608E9B500C61DC7 /* Brew.swift in Sources */,
 				222D50DA262F2B4400B69BEF /* ReadingsView.swift in Sources */,
 				2256D0EB2608DA6800C61DC7 /* BubblerApp.swift in Sources */,
-				222284F526304B7100BA5FC8 /* AddSheet.swift in Sources */,
+				222284F526304B7100BA5FC8 /* AlertsSheetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

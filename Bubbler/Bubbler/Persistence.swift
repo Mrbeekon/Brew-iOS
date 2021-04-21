@@ -21,6 +21,7 @@ struct PersistenceController {
             newItem.og = "1.050"
             newItem.sg = "1.030"
             newItem.fg = "1.010"
+            newItem.startDate = Date()
         }
         do {
             try viewContext.save()
@@ -36,7 +37,7 @@ struct PersistenceController {
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "Bubbler")
+        container = NSPersistentContainer(name: "BrewModel")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
