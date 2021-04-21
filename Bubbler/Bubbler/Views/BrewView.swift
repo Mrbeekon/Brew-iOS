@@ -13,6 +13,7 @@ import SwiftUI
 struct BrewView: View {
     
     @State private var showingSheet = false
+    @State var tableNumber = ""
     
     let brew: Brew
     

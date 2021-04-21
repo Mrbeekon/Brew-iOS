@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2222844926303A6C00BA5FC8 /* BrewModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2222844726303A6C00BA5FC8 /* BrewModel.xcdatamodeld */; };
+		222284E026303F1C00BA5FC8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284DF26303F1C00BA5FC8 /* Persistence.swift */; };
+		222284EC263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284EA263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift */; };
+		222284ED263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284EB263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift */; };
+		222284F526304B7100BA5FC8 /* AddSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284F426304B7100BA5FC8 /* AddSheet.swift */; };
 		222D50BF262EE47400B69BEF /* BrewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D50BE262EE47400B69BEF /* BrewsListView.swift */; };
 		222D50CA262EE6DF00B69BEF /* BrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D50C9262EE6DF00B69BEF /* BrewView.swift */; };
 		222D50D2262F235F00B69BEF /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D50D1262F235F00B69BEF /* Styles.swift */; };
 		222D50DA262F2B4400B69BEF /* ReadingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D50D9262F2B4400B69BEF /* ReadingsView.swift */; };
-		222D50E52630350A00B69BEF /* Reading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D50E42630350A00B69BEF /* Reading.swift */; };
 		2256D0EB2608DA6800C61DC7 /* BubblerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256D0EA2608DA6800C61DC7 /* BubblerApp.swift */; };
 		2256D0ED2608DA6800C61DC7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256D0EC2608DA6800C61DC7 /* ContentView.swift */; };
 		2256D0EF2608DA6900C61DC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2256D0EE2608DA6900C61DC7 /* Assets.xcassets */; };
@@ -39,11 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2222844826303A6C00BA5FC8 /* BrewModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BrewModel.xcdatamodel; sourceTree = "<group>"; };
+		222284DF26303F1C00BA5FC8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		222284EA263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BrewEntity+CoreDataClass.swift"; path = "Bubbler/BrewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		222284EB263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BrewEntity+CoreDataProperties.swift"; path = "Bubbler/BrewEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		222284F426304B7100BA5FC8 /* AddSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSheet.swift; sourceTree = "<group>"; };
 		222D50BE262EE47400B69BEF /* BrewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewsListView.swift; sourceTree = "<group>"; };
 		222D50C9262EE6DF00B69BEF /* BrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewView.swift; sourceTree = "<group>"; };
 		222D50D1262F235F00B69BEF /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		222D50D9262F2B4400B69BEF /* ReadingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingsView.swift; sourceTree = "<group>"; };
-		222D50E42630350A00B69BEF /* Reading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reading.swift; sourceTree = "<group>"; };
 		2256D0E72608DA6800C61DC7 /* Bubbler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bubbler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2256D0EA2608DA6800C61DC7 /* BubblerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblerApp.swift; sourceTree = "<group>"; };
 		2256D0EC2608DA6800C61DC7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				2256D1182608E9B400C61DC7 /* Brew.swift */,
-				222D50E42630350A00B69BEF /* Reading.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -100,6 +107,7 @@
 				222D50BE262EE47400B69BEF /* BrewsListView.swift */,
 				222D50C9262EE6DF00B69BEF /* BrewView.swift */,
 				222D50D9262F2B4400B69BEF /* ReadingsView.swift */,
+				222284F426304B7100BA5FC8 /* AddSheet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -107,6 +115,8 @@
 		2256D0DE2608DA6800C61DC7 = {
 			isa = PBXGroup;
 			children = (
+				222284EA263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift */,
+				222284EB263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift */,
 				2256D0E92608DA6800C61DC7 /* Bubbler */,
 				2256D0FB2608DA6900C61DC7 /* BubblerTests */,
 				2256D1062608DA6900C61DC7 /* BubblerUITests */,
@@ -130,9 +140,11 @@
 				2256D0EA2608DA6800C61DC7 /* BubblerApp.swift */,
 				222D50F12630368300B69BEF /* Views */,
 				222D50EC2630360C00B69BEF /* Models */,
+				222284DF26303F1C00BA5FC8 /* Persistence.swift */,
+				222D50D1262F235F00B69BEF /* Styles.swift */,
+				2222844726303A6C00BA5FC8 /* BrewModel.xcdatamodeld */,
 				2256D0EE2608DA6900C61DC7 /* Assets.xcassets */,
 				2256D0F32608DA6900C61DC7 /* Info.plist */,
-				222D50D1262F235F00B69BEF /* Styles.swift */,
 				2256D0F02608DA6900C61DC7 /* Preview Content */,
 			);
 			path = Bubbler;
@@ -293,14 +305,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				222284EC263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift in Sources */,
 				222D50CA262EE6DF00B69BEF /* BrewView.swift in Sources */,
 				222D50BF262EE47400B69BEF /* BrewsListView.swift in Sources */,
-				222D50E52630350A00B69BEF /* Reading.swift in Sources */,
 				2256D0ED2608DA6800C61DC7 /* ContentView.swift in Sources */,
 				222D50D2262F235F00B69BEF /* Styles.swift in Sources */,
+				2222844926303A6C00BA5FC8 /* BrewModel.xcdatamodeld in Sources */,
+				222284E026303F1C00BA5FC8 /* Persistence.swift in Sources */,
+				222284ED263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift in Sources */,
 				2256D11A2608E9B500C61DC7 /* Brew.swift in Sources */,
 				222D50DA262F2B4400B69BEF /* ReadingsView.swift in Sources */,
 				2256D0EB2608DA6800C61DC7 /* BubblerApp.swift in Sources */,
+				222284F526304B7100BA5FC8 /* AddSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +636,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2222844726303A6C00BA5FC8 /* BrewModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2222844826303A6C00BA5FC8 /* BrewModel.xcdatamodel */,
+			);
+			currentVersion = 2222844826303A6C00BA5FC8 /* BrewModel.xcdatamodel */;
+			path = BrewModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2256D0DF2608DA6800C61DC7 /* Project object */;
 }

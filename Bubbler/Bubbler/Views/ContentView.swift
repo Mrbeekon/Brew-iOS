@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 extension Color {
     static let offWhite = Color(red: 225 / 255, green: 225 / 255, blue: 235 / 255)
@@ -22,6 +23,7 @@ let brews = [
     ]
 
 struct ContentView: View {
+    @State private var showingAddSheet = false
     var body: some View {
         NavigationView {
             VStack {
@@ -29,8 +31,13 @@ struct ContentView: View {
                     Text("Brews")
                         .multilineTextAlignment(.leading)
                     Spacer()
-                    Button("Add") {}
+                    Button("Add") {
+                        showingAddSheet = true
+                    }
                         .buttonStyle(AddButton())
+                        .sheet(isPresented: $showingAddSheet) {
+                                AddSheet()
+                            }
                 }
                 BrewsListView(brews: brews)
             }
@@ -41,6 +48,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
