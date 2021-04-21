@@ -11,6 +11,7 @@
 		222D50CA262EE6DF00B69BEF /* BrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D50C9262EE6DF00B69BEF /* BrewView.swift */; };
 		222D50D2262F235F00B69BEF /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D50D1262F235F00B69BEF /* Styles.swift */; };
 		222D50DA262F2B4400B69BEF /* ReadingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D50D9262F2B4400B69BEF /* ReadingsView.swift */; };
+		222D50E52630350A00B69BEF /* Reading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D50E42630350A00B69BEF /* Reading.swift */; };
 		2256D0EB2608DA6800C61DC7 /* BubblerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256D0EA2608DA6800C61DC7 /* BubblerApp.swift */; };
 		2256D0ED2608DA6800C61DC7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256D0EC2608DA6800C61DC7 /* ContentView.swift */; };
 		2256D0EF2608DA6900C61DC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2256D0EE2608DA6900C61DC7 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		222D50C9262EE6DF00B69BEF /* BrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewView.swift; sourceTree = "<group>"; };
 		222D50D1262F235F00B69BEF /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		222D50D9262F2B4400B69BEF /* ReadingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingsView.swift; sourceTree = "<group>"; };
+		222D50E42630350A00B69BEF /* Reading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reading.swift; sourceTree = "<group>"; };
 		2256D0E72608DA6800C61DC7 /* Bubbler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bubbler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2256D0EA2608DA6800C61DC7 /* BubblerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblerApp.swift; sourceTree = "<group>"; };
 		2256D0EC2608DA6800C61DC7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +84,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		222D50EC2630360C00B69BEF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2256D1182608E9B400C61DC7 /* Brew.swift */,
+				222D50E42630350A00B69BEF /* Reading.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		222D50F12630368300B69BEF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2256D0EC2608DA6800C61DC7 /* ContentView.swift */,
+				222D50BE262EE47400B69BEF /* BrewsListView.swift */,
+				222D50C9262EE6DF00B69BEF /* BrewView.swift */,
+				222D50D9262F2B4400B69BEF /* ReadingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2256D0DE2608DA6800C61DC7 = {
 			isa = PBXGroup;
 			children = (
@@ -106,11 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				2256D0EA2608DA6800C61DC7 /* BubblerApp.swift */,
-				2256D0EC2608DA6800C61DC7 /* ContentView.swift */,
-				222D50BE262EE47400B69BEF /* BrewsListView.swift */,
-				222D50C9262EE6DF00B69BEF /* BrewView.swift */,
-				2256D1182608E9B400C61DC7 /* Brew.swift */,
-				222D50D9262F2B4400B69BEF /* ReadingsView.swift */,
+				222D50F12630368300B69BEF /* Views */,
+				222D50EC2630360C00B69BEF /* Models */,
 				2256D0EE2608DA6900C61DC7 /* Assets.xcassets */,
 				2256D0F32608DA6900C61DC7 /* Info.plist */,
 				222D50D1262F235F00B69BEF /* Styles.swift */,
@@ -276,6 +295,7 @@
 			files = (
 				222D50CA262EE6DF00B69BEF /* BrewView.swift in Sources */,
 				222D50BF262EE47400B69BEF /* BrewsListView.swift in Sources */,
+				222D50E52630350A00B69BEF /* Reading.swift in Sources */,
 				2256D0ED2608DA6800C61DC7 /* ContentView.swift in Sources */,
 				222D50D2262F235F00B69BEF /* Styles.swift in Sources */,
 				2256D11A2608E9B500C61DC7 /* Brew.swift in Sources */,

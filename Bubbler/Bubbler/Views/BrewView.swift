@@ -11,6 +11,9 @@
 import SwiftUI
 
 struct BrewView: View {
+    
+    @State private var showingSheet = false
+    
     let brew: Brew
     
     let isExpanded: Bool
@@ -18,8 +21,6 @@ struct BrewView: View {
     var body: some View {
         content
     }
-    
-    @State private var showingSheet = false
     
     private var content: some View {
         ZStack(alignment: .center)  {

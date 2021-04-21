@@ -11,6 +11,10 @@ struct BrewsListView: View {
     let brews: [Brew]
     @State private var selection: Set<Brew> = []
     
+    func delete(at offsets: IndexSet) {
+        print("delete")
+    }
+    
     var body: some View {
         ScrollView {
             ForEach(brews) { brew in
@@ -21,6 +25,7 @@ struct BrewsListView: View {
                 Spacer()
             }
         }
+        
     }
     
     func selectDeselect(_ brew: Brew) {
