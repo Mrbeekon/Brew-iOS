@@ -19,23 +19,31 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                HStack {
-                    Text("Brews")
-                        .multilineTextAlignment(.leading)
-                    Spacer()
+            /*HStack {
+                Text("Brews")
+                    .multilineTextAlignment(.leading)
+                Spacer()
+                Button("Add") {
+                    showAddSheet = true
+                }
+                    .buttonStyle(AddButton())
+                .sheet(isPresented: $showAddSheet) {
+                        AddSheetView()
+                    }
+            }*/
+            BrewsListView()
+                .navigationTitle("Brews")
+                .toolbar {
                     Button("Add") {
                         showAddSheet = true
                     }
-                        .buttonStyle(AddButton())
-                    .sheet(isPresented: $showAddSheet) {
-                            AddSheetView()
-                        }
+                    .buttonStyle(AddButton())
+                .sheet(isPresented: $showAddSheet) {
+                        AddSheetView()
+                    }
                 }
-                BrewsListView()
-            }
-            .navigationBarHidden(true)
         }
+            
     }
 }
 

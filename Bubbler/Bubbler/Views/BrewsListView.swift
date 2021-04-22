@@ -14,23 +14,6 @@ struct BrewsListView: View {
     
     @State private var selection: Set<BrewEntity> = []
     
-    func delete(at offsets: IndexSet) {
-        print("delete")
-    }
-    
-    var body: some View {
-        ScrollView {
-            ForEach(brews) { brew in
-                Spacer()
-                BrewView(brew: brew, isExpanded: self.selection.contains(brew))
-                    .onTapGesture { self.selectDeselect(brew) }
-                    .animation(.linear(duration: 0.3))
-                Spacer()
-            }
-        }
-        
-    }
-    
     func selectDeselect(_ brew: BrewEntity) {
         print("Selected \(brew.id)")
         if selection.contains(brew) {
@@ -38,5 +21,16 @@ struct BrewsListView: View {
         } else {
             selection.insert(brew)
         }
+    }
+    
+    var body: some View {
+         ScrollView {
+            ForEach(brews) { brew in
+                BrewView(brew: brew, isExpanded: self.selection.contains(brew))
+                    .onTapGesture { self.selectDeselect(brew) }
+                    .animation(.linear(duration: 0.3))
+            }
+        }
+        
     }
 }
