@@ -18,8 +18,10 @@ struct AddSheetView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("New brew")) {
+                Section(header: Text("Name")) {
                     TextField("Brew Name", text: $brewName)
+                }
+                Section(header: Text("Start Date")) {
                     DatePicker(
                         "Start Date",
                         selection: $dateCreated,
@@ -32,7 +34,7 @@ struct AddSheetView: View {
                         guard self.brewName != "" else {return}
                             let newBrew = BrewEntity(context: viewContext)
                         newBrew.name = self.brewName
-                        newBrew.startDate = self.dateCreated
+                        newBrew.readings[self.dateCreated] = "1.050"
                         newBrew.id = UUID()
                         do {
                             try viewContext.save()

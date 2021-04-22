@@ -15,8 +15,8 @@ import CoreData
     ]*/
 
 struct ContentView: View {
-    
     @State private var showAddSheet = false
+    
     var body: some View {
         NavigationView {
             VStack {

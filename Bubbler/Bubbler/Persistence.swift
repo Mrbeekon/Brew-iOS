@@ -18,10 +18,9 @@ struct PersistenceController {
             newItem.name = "Hop Monster"
             newItem.abv = "3.8"
             newItem.id = UUID()
-            newItem.og = "1.050"
-            newItem.sg = "1.030"
-            newItem.fg = "1.010"
-            newItem.startDate = Date()
+            newItem.done = false
+            newItem.readings = [Date():"1.050"]
+            
         }
         do {
             try viewContext.save()

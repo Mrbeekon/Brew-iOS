@@ -39,8 +39,8 @@ struct BrewView: View {
             
             if isExpanded {
                 VStack{
-                    Text("OG: " + (brew.og ?? "N/A"))
-                    Text("SG: " + (brew.sg ?? "N/A"))
+                    Text("OG: N/A")  //get from dictionary
+                    Text("SG: N/A")  //get from dictionary
                     HStack{
                         Button("Alerts") {
                             showAlertsSheet = true
