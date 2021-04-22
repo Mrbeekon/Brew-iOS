@@ -34,13 +34,12 @@ struct AddReadingSheetView: View {
                         guard self.gravityReading != "" else {return}
                         
                         brew.readings[dateRecorded] = gravityReading
-                        
+                        brew.calculateAbv()
                         do {
                             try viewContext.save()
-                            print("Reading saved")
+                            print("ABV saved")
                             self.brew.objectWillChange.send()
                             presentationMode.wrappedValue.dismiss()
-                            
                         } catch {
                             print(error.localizedDescription)
                         }

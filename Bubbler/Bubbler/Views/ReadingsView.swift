@@ -40,7 +40,7 @@ struct ReadingsView: View {
                     Spacer()
                     Text(brew.abv ?? "N/A")
                         .onAppear{
-                            brew.setAbv()
+                            brew.calculateAbv()
                             do {
                                 try viewContext.save()
                                 print("ABV saved")

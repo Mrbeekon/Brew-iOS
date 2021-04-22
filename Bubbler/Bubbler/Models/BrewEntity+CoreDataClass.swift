@@ -19,16 +19,15 @@ public class BrewEntity: NSManagedObject {
     
     func calculateAbv(){
         var og: Double
-        var sg: Double
+        var fg: Double
         //sort dictionary by date
+        let sortedReadings = Array(self.readings.sorted(by: <))
         
+        //get first and last values then string to double
+        og = ((sortedReadings.first?.value ?? "0.0") as NSString).doubleValue
+        fg = ((sortedReadings.last?.value ?? "0.0") as NSString).doubleValue
         
-        og = Double(self.readings[] = "")
-        sg = Double(self.readings[] = "")
-        
-    }
- 
-    func setAbv(){
-        self.abv = "5.5"
+        //abv calculation
+        self.abv = String(format: "%.2f", (og - fg)*131.25)
     }
 }
