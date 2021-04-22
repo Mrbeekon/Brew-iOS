@@ -15,7 +15,7 @@ struct BrewView: View {
     @State private var showAlertsSheet = false
     @State var tableNumber = ""
     
-    let brew: BrewEntity
+    @ObservedObject var brew: BrewEntity
     
     let isExpanded: Bool
     
@@ -50,7 +50,7 @@ struct BrewView: View {
                                     AlertsSheetView()
                                 }
                         
-                        NavigationLink(destination: ReadingsView()) {
+                        NavigationLink(destination: ReadingsView(brew: brew)) {
                             Text("Readings")
                             
                             .padding()

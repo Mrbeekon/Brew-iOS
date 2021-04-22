@@ -9,10 +9,15 @@ import SwiftUI
 
 struct ReadingsView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(entity: BrewEntity.entity(), sortDescriptors: [])
-    var brews: FetchedResults<BrewEntity>
+    @ObservedObject var brew: BrewEntity
     
-    @State private var showAddSheet = false
+    @State private var showAddReadingSheet = false
+    
+    static let readingDateFormat: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:mm d-MM-y"
+            return formatter
+        }()
     
     var body: some View {
         NavigationView {
@@ -22,30 +27,41 @@ struct ReadingsView: View {
                         .multilineTextAlignment(.leading)
                     Spacer()
                     Button("Add") {
-                        showAddSheet = true
+                        showAddReadingSheet = true
                     }
                         .buttonStyle(AddButton())
-                    .sheet(isPresented: $showAddSheet) {
-                            AddSheetView()
+                    .sheet(isPresented: $showAddReadingSheet) {
+                        AddReadingSheetView(brew: brew)
                         }
                 }
-                ScrollView {
-                    ForEach(readings) { reading in
-                        Spacer()
-                        BrewView(brew: brew, isExpanded: self.selection.contains(brew))
-                            .onTapGesture { self.selectDeselect(brew) }
-                            .animation(.linear(duration: 0.3))
-                        Spacer()
+                HStack {
+                    Text(brew.name)
+                        .multilineTextAlignment(.leading)
+                    Spacer()
+                    Text(brew.abv ?? "N/A")
+                        .onAppear{
+                            brew.setAbv()
+                            do {
+                                try viewContext.save()
+                                print("ABV saved")
+                                self.brew.objectWillChange.send()
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                        }
+                        .multilineTextAlignment(.trailing)
+                }
+                List {
+                    ForEach(brew.readings.sorted(by: <), id: \.key) { key, reading in
+                        HStack {
+                            Text(reading)
+                            Spacer()
+                            Text("\(key, formatter: Self.readingDateFormat)")
+                        }
                     }
                 }
             }
             .navigationBarHidden(true)
         }
-    }
-}
-
-struct ReadingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ReadingsView()
     }
 }

@@ -21,28 +21,20 @@ struct AddSheetView: View {
                 Section(header: Text("Name")) {
                     TextField("Brew Name", text: $brewName)
                 }
-                Section(header: Text("Start Date")) {
-                    DatePicker(
-                        "Start Date",
-                        selection: $dateCreated,
-                        displayedComponents: [.date, .hourAndMinute]
-                    )
-                        .datePickerStyle(GraphicalDatePickerStyle())
-                }
                 Section {
                     Button(action: {
                         guard self.brewName != "" else {return}
-                            let newBrew = BrewEntity(context: viewContext)
+                            let newBrew = BrewEntity(context: viewContext) //indented?
                         newBrew.name = self.brewName
-                        newBrew.readings[self.dateCreated] = "1.050"
                         newBrew.id = UUID()
+                        newBrew.done = false
                         do {
                             try viewContext.save()
                             print("Brew saved")
                             presentationMode.wrappedValue.dismiss()
-                            } catch {
-                                print(error.localizedDescription)
-                            }
+                        } catch {
+                            print(error.localizedDescription)
+                        }
                     }) {
                         Text("Add Brew")
                     }
