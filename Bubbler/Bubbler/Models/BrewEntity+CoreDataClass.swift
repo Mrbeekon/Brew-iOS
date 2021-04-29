@@ -14,16 +14,10 @@ public class BrewEntity: NSManagedObject {
     let formatter = DateFormatter()
     let dateFormatString = "d-MM-y"
     
-    func calculateABV2(og: Double, fg: Double) -> Double {
-        var abv: Double
-        abv = (og - fg)*131.25
-        return abv
-    }
-    
     func calculateAbv(){
         var og: Double
         var fg: Double
-        //sort dictionary by date
+        //make sure using sorted dictionary by date
         let sortedReadings = Array(self.readings.sorted(by: <))
         
         //get first and last values then string to double
