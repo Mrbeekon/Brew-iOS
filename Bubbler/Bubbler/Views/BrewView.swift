@@ -25,7 +25,7 @@ struct BrewView: View {
     @State var selectedTag: String?
     
     var body: some View {
-        GeometryReader { metrics in }
+        //GeometryReader { metrics in }
         VStack  {
             HStack() {
                 Text(brew.name)
@@ -53,38 +53,21 @@ struct BrewView: View {
                             .sheet(isPresented: $showAlertsSheet) {
                                     AlertsSheetView()
                                 }
-                        /*NavigationLink(destination: Text("Readings"), tag: 1, selection: $action) {
-                                            EmptyView()
-                        }
-                        Text("View 1")
-                            .onTapGesture {
-                                self.action = 1
-                            }*/
                         
                         Button(action: {
-                            self.selectedTag = "xx"
+                            self.selectedTag = "readings"
                         }, label: {
                             Text("Readings")
                         })
                         .background(
                             NavigationLink(
                                 destination: ReadingsView(brew: brew),
-                                tag: "xx",
+                                tag: "readings",
                                 selection: $selectedTag,
                                 label: { EmptyView()}
                             )
                         )
                         .buttonStyle(ReadingsButton())
-                        /*
-                        NavigationLink(destination: ReadingsView(brew: brew)) {
-                            Text("Readings")
-                            
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(Color.bottleGreen)
-                            //.background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .trailing))
-                            .cornerRadius(20)
-                        }*/
                     }
                 }
             }

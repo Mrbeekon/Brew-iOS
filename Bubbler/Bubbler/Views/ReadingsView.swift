@@ -60,7 +60,20 @@ struct ReadingsView: View {
                         }
                     }
                     .onDelete(perform: { indexSet in
-                        print("beep")
+                        for index in indexSet {
+                            print(index) //the index in list
+                            // now get date at index
+                            let delDate = Array(brew.readings.keys)[index]
+                            // next delete the item with that key
+                            brew.readings.removeValue(forKey: delDate)
+                            brew.calculateAbv()
+                        }
+                        do {
+                            try viewContext.save()
+                        } catch {
+                            print("here")
+                            print(error.localizedDescription)
+                        }
                     })
                 }
             }

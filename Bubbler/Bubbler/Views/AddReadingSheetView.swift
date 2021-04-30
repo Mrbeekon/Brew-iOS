@@ -27,7 +27,6 @@ struct AddReadingSheetView: View {
                         selection: $dateRecorded,
                         displayedComponents: [.date, .hourAndMinute]
                     )
-                        //.datePickerStyle(GraphicalDatePickerStyle())
                 }
                 Section {
                     Button(action: {

@@ -13,6 +13,7 @@ struct BrewsListView: View {
     var brews: FetchedResults<BrewEntity>
     
     @State private var selection: Set<BrewEntity> = []
+    @State private var showAlert: Bool = false
     
     func selectDeselect(_ brew: BrewEntity) {
         print("Selected \(brew.id)")
@@ -31,18 +32,16 @@ struct BrewsListView: View {
                     .animation(.linear(duration: 0.3))
             }
             .onDelete(perform: { indexSet in
-                print("beep")
-            })
-            /*.onDelete(perform: { indexSet in
                 for index in indexSet {
                     viewContext.delete(brews[index])
                 }
                 do {
                     try viewContext.save()
                 } catch {
+                    print("here")
                     print(error.localizedDescription)
                 }
-            })*/
+            })
         }
         
     }
