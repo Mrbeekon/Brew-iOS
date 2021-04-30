@@ -59,6 +59,9 @@ struct ReadingsView: View {
                             Text("\(key, formatter: Self.readingDateFormat)")
                         }
                     }
+                    .onDelete(perform: { indexSet in
+                        print("beep")
+                    })
                 }
             }
             .navigationBarHidden(true)

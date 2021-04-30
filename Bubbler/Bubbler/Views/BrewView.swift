@@ -22,72 +22,73 @@ struct BrewView: View {
     @State var offset = CGSize.zero
     @State var scale : CGFloat = 0.5
     
+    @State var selectedTag: String?
+    
     var body: some View {
         GeometryReader { metrics in }
-            VStack  {
-                HStack() {
-                    Text(brew.name)
-                    Spacer()
-                    Text(brew.abv ?? "N/A")
-                        .font(.subheadline)
-                }
-                
-                HStack{
-                    Text("OG: ") + Text(brew.getOG()) //get from dictionary
-                    Text("FG: ") + Text(brew.getFG()) //get from dictionary
-                }
-                HStack{
-                    Text("Start Date: ") + Text(brew.getStartDate()) //get from dictionary
-                    Text("End Date: ") + Text(brew.getEndDate()) //get from dictionary
-                }
-                
-                if isExpanded {
-                    VStack{
-                        HStack{
-                            Button("Alerts") {
-                                showAlertsSheet = true
-                            }
-                                .buttonStyle(AlertsButton())
-                                .sheet(isPresented: $showAlertsSheet) {
-                                        AlertsSheetView()
-                                    }
-                            
-                            NavigationLink(destination: ReadingsView(brew: brew)) {
-                                Text("Readings")
-                                
-                                .padding()
-                                .foregroundColor(.white)
-                                .background(Color.bottleGreen)
-                                //.background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .trailing))
-                                .cornerRadius(20)
-                            }
+        VStack  {
+            HStack() {
+                Text(brew.name)
+                Spacer()
+                Text(brew.abv ?? "N/A")
+                    .font(.subheadline)
+            }
+            
+            HStack{
+                Text("OG: ") + Text(brew.getOG()) //get from dictionary
+                Text("FG: ") + Text(brew.getFG()) //get from dictionary
+            }
+            HStack{
+                Text("Start Date: ") + Text(brew.getStartDate()) //get from dictionary
+                Text("End Date: ") + Text(brew.getEndDate()) //get from dictionary
+            }
+            
+            if isExpanded {
+                VStack{
+                    HStack{
+                        Button("Alerts") {
+                            showAlertsSheet = true
                         }
+                            .buttonStyle(AlertsButton())
+                            .sheet(isPresented: $showAlertsSheet) {
+                                    AlertsSheetView()
+                                }
+                        /*NavigationLink(destination: Text("Readings"), tag: 1, selection: $action) {
+                                            EmptyView()
+                        }
+                        Text("View 1")
+                            .onTapGesture {
+                                self.action = 1
+                            }*/
+                        
+                        Button(action: {
+                            self.selectedTag = "xx"
+                        }, label: {
+                            Text("Readings")
+                        })
+                        .background(
+                            NavigationLink(
+                                destination: ReadingsView(brew: brew),
+                                tag: "xx",
+                                selection: $selectedTag,
+                                label: { EmptyView()}
+                            )
+                        )
+                        .buttonStyle(ReadingsButton())
+                        /*
+                        NavigationLink(destination: ReadingsView(brew: brew)) {
+                            Text("Readings")
+                            
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(Color.bottleGreen)
+                            //.background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .trailing))
+                            .cornerRadius(20)
+                        }*/
                     }
                 }
             }
-            .frame(width: 350, height:60, alignment: .topLeading)
-            .background(Color.foam.mask(RoundedRectangle(cornerRadius: 20)))
-            
-            .frame(width: 350, height:150, alignment: .topLeading)
-            .background(Color.beerAmber.mask(RoundedRectangle(cornerRadius: 20)).shadow(radius: 2, x: 0, y: 3))
-            
-            .background(Color.secondary.opacity(0.0))
-            .offset(self.offset)
-            .animation(.spring())
-            .gesture(DragGesture()
-                        .onChanged { gesture in
-                            self.offset.width = gesture.translation.width
-                        }
-                        .onEnded { _ in
-                            if self.offset.width < -50 {
-                                self.scale = 1
-                                self.offset.width = -60
-                            } else {
-                                self.scale = 0.5
-                                self.offset = .zero
-                            }
-                        })
-        
+        }
     }
 }
 

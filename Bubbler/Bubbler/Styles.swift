@@ -41,3 +41,16 @@ struct AlertsButton: ButtonStyle {
             
     }
 }
+
+struct ReadingsButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration
+            .label
+            .foregroundColor(configuration.isPressed ? .gray : .white)
+            .padding()
+            .background(Color.bottleGreen)
+            .cornerRadius(20)
+            //.shadow(radius: 2, x: 0, y: 3)
+            
+    }
+}
