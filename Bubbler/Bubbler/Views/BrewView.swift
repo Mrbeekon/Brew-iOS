@@ -24,6 +24,8 @@ struct BrewView: View {
     
     @State var selectedTag: String?
     
+    @State var on = true
+    
     var body: some View {
         //GeometryReader { metrics in }
         VStack  {
@@ -45,6 +47,17 @@ struct BrewView: View {
             
             if isExpanded {
                 VStack{
+                    LineGraphShape(dataPoints: [1.050, 1.040, 1.030, 1.020, 1.010])
+                        .trim(to: on ? 1 : 0)
+                        .stroke(Color.red, lineWidth: 2)
+                        .aspectRatio(16/9, contentMode: .fit)
+                        .border(Color.gray, width: 1)
+                        .padding()
+                    Button("Animate") {
+                        withAnimation(.easeInOut(duration: 2)) {
+                            self.on.toggle()
+                        }
+                    }
                     HStack{
                         Button("Alerts") {
                             showAlertsSheet = true
@@ -74,6 +87,7 @@ struct BrewView: View {
         }
     }
 }
+
 
 /*
 struct BrewView_Previews: PreviewProvider {
