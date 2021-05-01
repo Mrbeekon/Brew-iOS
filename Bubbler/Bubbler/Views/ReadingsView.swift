@@ -13,6 +13,11 @@ struct ReadingsView: View {
     
     @State private var showAddReadingSheet = false
     
+    @State var newName = ""
+    
+    @State private var showNameChangeSheet = false
+    @State private var showReadingChangeSheet = false
+    
     static let readingDateFormat: DateFormatter = {
             let formatter = DateFormatter()
             formatter.dateFormat = "HH:mm d-MM-y"
@@ -23,20 +28,22 @@ struct ReadingsView: View {
         NavigationView {
             VStack {
                 HStack {
-                    Text("Readings")
-                        .multilineTextAlignment(.leading)
-                    Spacer()
-                    Button("Add") {
-                        showAddReadingSheet = true
+                    Button(brew.name){
+                        print("beep")
+                        showNameChangeSheet = true
                     }
-                        .buttonStyle(AddButton())
-                    .sheet(isPresented: $showAddReadingSheet) {
-                        AddReadingSheetView(brew: brew)
-                        }
-                }
-                HStack {
-                    Text(brew.name)
-                        .multilineTextAlignment(.leading)
+                    .buttonStyle(HiddenButton())
+                    .multilineTextAlignment(.leading)
+                    .sheet(isPresented: $showNameChangeSheet){
+                        ChangeNameSheetView(brew: brew)
+                    }
+                    
+                    /*Text(brew.name)
+                        .onTapGesture {
+                            print("boop")
+                            TextField(brew.name, text: $newName)
+                        }*/
+                    
                     Spacer()
                     Text(brew.abv ?? "N/A")
                         .onAppear{
@@ -58,6 +65,12 @@ struct ReadingsView: View {
                             Spacer()
                             Text("\(key, formatter: Self.readingDateFormat)")
                         }
+                        .onTapGesture {
+                            showReadingChangeSheet = true
+                        }
+                        .sheet(isPresented: $showReadingChangeSheet){
+                            ChangeReadingSheetView(brew: brew, oldDate: key)
+                        }
                     }
                     .onDelete(perform: { indexSet in
                         for index in indexSet {
@@ -77,7 +90,16 @@ struct ReadingsView: View {
                     })
                 }
             }
-            .navigationBarHidden(true)
         }
+        .navigationTitle("Readings")
+        .toolbar {
+            Button("Add") {
+                showAddReadingSheet = true
+            }
+                .buttonStyle(AddButton())
+        }
+        .sheet(isPresented: $showAddReadingSheet) {
+            AddReadingSheetView(brew: brew)
+            }
     }
 }

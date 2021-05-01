@@ -24,7 +24,7 @@ struct BrewView: View {
     
     @State var selectedTag: String?
     
-    @State var on = true
+    @State var graphOn = true
     
     var body: some View {
         //GeometryReader { metrics in }
@@ -47,16 +47,12 @@ struct BrewView: View {
             
             if isExpanded {
                 VStack{
-                    LineGraphShape(dataPoints: [1.050, 1.040, 1.030, 1.020, 1.010])
-                        .trim(to: on ? 1 : 0)
+                    LineGraphShape(dataPoints: [1.060, 1.040, 1.020, 1.015, 1.010])
+                        .trim(to: graphOn ? 1 : 0)
                         .stroke(Color.red, lineWidth: 2)
                         .aspectRatio(16/9, contentMode: .fit)
-                        .border(Color.gray, width: 1)
+                        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
                         .padding()
-                    Button("Animate") {
-                        withAnimation(.easeInOut(duration: 2)) {
-                            self.on.toggle()
-                        }
                     }
                     HStack{
                         Button("Alerts") {
@@ -86,7 +82,7 @@ struct BrewView: View {
             }
         }
     }
-}
+
 
 
 /*

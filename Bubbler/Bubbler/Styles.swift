@@ -54,3 +54,13 @@ struct ReadingsButton: ButtonStyle {
             
     }
 }
+
+struct HiddenButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration
+            .label
+            .foregroundColor(configuration.isPressed ? .gray : .black)
+            //.shadow(radius: 2, x: 0, y: 3)
+            
+    }
+}
