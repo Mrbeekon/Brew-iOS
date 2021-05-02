@@ -35,7 +35,7 @@ public class BrewEntity: NSManagedObject {
         let sortedReadings = Array(self.readings.sorted(by: <))
         
         //get first and last values then string to double
-        og = sortedReadings.first?.value ?? "N/A"
+        og = sortedReadings.first?.value ?? "-"
         return og
     }
     
@@ -45,7 +45,7 @@ public class BrewEntity: NSManagedObject {
         let sortedReadings = Array(self.readings.sorted(by: <))
         
         //get first and last values then string to double
-        fg = sortedReadings.last?.value ?? "N/A"
+        fg = sortedReadings.last?.value ?? "-"
         return fg
     }
     

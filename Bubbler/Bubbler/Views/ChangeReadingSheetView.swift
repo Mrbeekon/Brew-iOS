@@ -25,7 +25,7 @@ struct ChangeReadingSheetView: View {
                     TextField("New Reading", text: $newGravityReading)
                         .keyboardType(.decimalPad)
                     DatePicker(
-                        "New Date",
+                        "Date and time",
                         selection: $newDateRecorded,
                         displayedComponents: [.date, .hourAndMinute]
                     )

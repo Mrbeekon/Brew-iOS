@@ -9,14 +9,15 @@ import SwiftUI
 import UserNotifications
 
 struct AlertsSheetView: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @Environment (\.presentationMode) var presentationMode
     @State var days = ""
     @State var time = Date()
     
-    @State var notificationOn = false
+    @ObservedObject var brew: BrewEntity
     
     func setNotification() {
-        if notificationOn {
+        if brew.notificationIsSet {
             print("on")
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
                 if success {
@@ -27,7 +28,7 @@ struct AlertsSheetView: View {
             }
             let content = UNMutableNotificationContent()
             content.title = "Check your brew 🍺"
-            content.subtitle = "It's time to take a reading of"
+            content.subtitle = "It's time to take a reading of " + brew.name
             content.sound = UNNotificationSound.default
 
             let components = Calendar.current.dateComponents([.hour, .minute], from: time)
@@ -53,8 +54,8 @@ struct AlertsSheetView: View {
                         DatePicker("Repeat every day at",
                             selection: $time,
                             displayedComponents: [.hourAndMinute])
-                        Toggle("Beep Boop", isOn: $notificationOn)
-                            .onChange(of: notificationOn){ value in
+                        Toggle("Start notification", isOn: $brew.notificationIsSet)
+                            .onChange(of: brew.notificationIsSet){ value in
                                 setNotification()
                             }
                     }

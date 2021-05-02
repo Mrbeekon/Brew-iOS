@@ -27,7 +27,7 @@ struct AddSheetView: View {
                             let newBrew = BrewEntity(context: viewContext) //indented?
                         newBrew.name = self.brewName
                         newBrew.id = UUID()
-                        newBrew.done = false
+                        newBrew.notificationIsSet = false
                         do {
                             try viewContext.save()
                             print("Brew saved")

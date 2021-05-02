@@ -26,22 +26,35 @@ struct BrewsListView: View {
     
     var body: some View {
          List {
-            ForEach(brews) { brew in
-                BrewView(brew: brew, isExpanded: self.selection.contains(brew))
-                    .onTapGesture { self.selectDeselect(brew) }
-                    .animation(.linear(duration: 0.3))
+            if brews.isEmpty {
+                VStack(alignment: .center, spacing: 10){
+                    Text("Welcome to Bubbler!")
+                    Spacer()
+                    Spacer()
+                    Text("Currently you have no brews to view.")
+                    Spacer()
+                    Text("Lets fix that.")
+                    Spacer()
+                    Text("Press the 'Add' button in the top right.")
+                }
+            } else {
+                ForEach(brews) { brew in
+                    BrewView(brew: brew, isExpanded: self.selection.contains(brew))
+                        .onTapGesture { self.selectDeselect(brew) }
+                        .animation(.linear(duration: 0.3))
+                }
+                .onDelete(perform: { indexSet in
+                    for index in indexSet {
+                        viewContext.delete(brews[index])
+                    }
+                    do {
+                        try viewContext.save()
+                    } catch {
+                        print("here")
+                        print(error.localizedDescription)
+                    }
+                })
             }
-            .onDelete(perform: { indexSet in
-                for index in indexSet {
-                    viewContext.delete(brews[index])
-                }
-                do {
-                    try viewContext.save()
-                } catch {
-                    print("here")
-                    print(error.localizedDescription)
-                }
-            })
         }
         
     }

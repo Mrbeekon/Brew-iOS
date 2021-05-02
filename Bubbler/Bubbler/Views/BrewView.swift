@@ -32,22 +32,25 @@ struct BrewView: View {
             HStack() {
                 Text(brew.name)
                 Spacer()
-                Text(brew.abv ?? "N/A")
+                Text(brew.abv ?? "-")
                     .font(.subheadline)
             }
             
             HStack{
+                Text("Start Date: ") + Text(brew.getStartDate()) //get from dictionary
+                Spacer()
                 Text("OG: ") + Text(brew.getOG()) //get from dictionary
-                Text("FG: ") + Text(brew.getFG()) //get from dictionary
+                
             }
             HStack{
-                Text("Start Date: ") + Text(brew.getStartDate()) //get from dictionary
                 Text("End Date: ") + Text(brew.getEndDate()) //get from dictionary
+                Spacer()
+                Text("FG: ") + Text(brew.getFG()) //get from dictionary
             }
             
             if isExpanded {
                 VStack{
-                    LineGraphShape(dataPoints: [1.060, 1.040, 1.020, 1.015, 1.010])
+                    LineGraphShape(dataPoints: [0.8, 0.5, 0.3, 0.2, 0.1])
                         .trim(to: graphOn ? 1 : 0)
                         .stroke(Color.red, lineWidth: 2)
                         .aspectRatio(16/9, contentMode: .fit)
@@ -60,7 +63,7 @@ struct BrewView: View {
                         }
                             .buttonStyle(AlertsButton())
                             .sheet(isPresented: $showAlertsSheet) {
-                                    AlertsSheetView()
+                                AlertsSheetView(brew: brew)
                                 }
                         
                         Button(action: {

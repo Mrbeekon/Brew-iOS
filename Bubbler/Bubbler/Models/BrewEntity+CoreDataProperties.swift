@@ -19,7 +19,7 @@ extension BrewEntity: Identifiable{
     @NSManaged public var abv: String?
     @NSManaged public var id: UUID
     @NSManaged public var name: String
-    @NSManaged public var done: Bool
+    @NSManaged public var notificationIsSet: Bool
     @NSManaged public var readings: [Date:String]  //[Double] also works
 
 }
