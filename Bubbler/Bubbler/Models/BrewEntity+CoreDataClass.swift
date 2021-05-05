@@ -14,20 +14,6 @@ public class BrewEntity: NSManagedObject {
     let formatter = DateFormatter()
     let dateFormatString = "d-MM-y"
     
-    func calculateAbv(){
-        var og: Double
-        var fg: Double
-        //make sure using sorted dictionary by date
-        let sortedReadings = Array(self.readings.sorted(by: <))
-        
-        //get first and last values then string to double
-        og = ((sortedReadings.first?.value ?? "0.0") as NSString).doubleValue
-        fg = ((sortedReadings.last?.value ?? "0.0") as NSString).doubleValue
-        
-        //abv calculation
-        self.abv = String(format: "%.2f", (og - fg)*131.25)
-    }
-    
     func getOG() -> String {
         var og: String
         
@@ -69,4 +55,51 @@ public class BrewEntity: NSManagedObject {
         return date
     }
     
+    func calculateAbv(){
+        var og: Double
+        var fg: Double
+        //make sure using sorted dictionary by date
+        let sortedReadings = Array(self.readings.sorted(by: <))
+        
+        //get first and last values then string to double
+        og = ((sortedReadings.first?.value ?? "0.0") as NSString).doubleValue
+        fg = ((sortedReadings.last?.value ?? "0.0") as NSString).doubleValue
+        
+        //abv calculation
+        self.abv = String(format: "%.2f", (og - fg)*131.25)
+    }
+    
+    //adds a sanitised reading to the brew
+    func addReading(readingDate: Date, readingValue: String){
+        /*var cleanReadingValue = readingValue
+         if cleanReadingValue.contains(".") {
+             let splitted = cleanReadingValue.split(separator: ".")
+             if splitted.count >= 2 {
+                 let preDecimal = String(splitted[0])
+                 var afterDecimal = String(splitted[1])
+                 
+                 var afterDecimalArray = afterDecimal.components(separatedBy: "")
+                 
+                 let c = 1...(2-afterDecimalArray.count)
+                 for _ in c {
+                     afterDecimalArray.append("0")
+                 }
+                 afterDecimal = afterDecimalArray.joined()
+                 cleanReadingValue = "\(preDecimal).\(afterDecimal)"
+             }
+         }*/
+        //only one decimal allowed in string
+        var cleanReadingValue = readingValue
+        if cleanReadingValue.contains(".") {
+            let splitted = cleanReadingValue.split(separator: ".")
+            if splitted.count >= 2 {
+                let preDecimal = String(splitted[0])
+                let afterDecimal = String(splitted[1])
+                cleanReadingValue = "\(preDecimal).\(afterDecimal)"
+            }
+        }
+        //should be 3dp as is standard
+        cleanReadingValue = String(format: "%.3f", ((cleanReadingValue) as NSString).doubleValue)
+        self.readings[readingDate] = cleanReadingValue
+    }
 }

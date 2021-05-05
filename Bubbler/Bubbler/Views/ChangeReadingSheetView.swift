@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ChangeReadingSheetView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -24,6 +25,12 @@ struct ChangeReadingSheetView: View {
                 Section(header: Text("Specific Gravity")) {
                     TextField("New Reading", text: $newGravityReading)
                         .keyboardType(.decimalPad)
+                        .onReceive(Just(newGravityReading)) { newValue in
+                            let filtered = newValue.filter { "0123456789.".contains($0) }
+                            if filtered != newValue {
+                                self.newGravityReading = filtered
+                            }
+                        }
                     DatePicker(
                         "Date and time",
                         selection: $newDateRecorded,
@@ -34,7 +41,7 @@ struct ChangeReadingSheetView: View {
                     Button(action: {
                         guard self.newGravityReading != "" else {return}
                         brew.readings.removeValue(forKey: oldDate)
-                        brew.readings[newDateRecorded] = newGravityReading
+                        brew.addReading(readingDate: newDateRecorded, readingValue: newGravityReading)
                         brew.calculateAbv()
                         do {
                             try viewContext.save()
