@@ -96,11 +96,4 @@ public class BrewEntity: NSManagedObject {
         }
         self.readings = newDict
     }
-    
-    func graphReadings() {
-        var normalisedReadings = self.readings.values.map {
-            CGFloat(($0 as NSString).doubleValue)
-        }
-        normalisedReadings
-    }
 }
