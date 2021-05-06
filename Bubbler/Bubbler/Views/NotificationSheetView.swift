@@ -8,7 +8,7 @@
 import SwiftUI
 import UserNotifications
 
-struct AlertsSheetView: View {
+struct NotificationSheetView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment (\.presentationMode) var presentationMode
     @State var days = ""

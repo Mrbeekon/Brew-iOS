@@ -66,7 +66,7 @@ struct BrewView: View {
                         }
                             .buttonStyle(AlertsButton())
                             .sheet(isPresented: $showAlertsSheet) {
-                                AlertsSheetView(brew: brew)
+                                NotificationSheetView(brew: brew)
                                 }
                         
                         Button(action: {
