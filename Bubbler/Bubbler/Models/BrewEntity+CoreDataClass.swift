@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import CoreGraphics
 
 @objc(BrewEntity)
 public class BrewEntity: NSManagedObject {
@@ -94,5 +95,12 @@ public class BrewEntity: NSManagedObject {
             newDict[tuple.key] = tuple.value
         }
         self.readings = newDict
+    }
+    
+    func graphReadings() {
+        var normalisedReadings = self.readings.values.map {
+            CGFloat(($0 as NSString).doubleValue)
+        }
+        normalisedReadings
     }
 }

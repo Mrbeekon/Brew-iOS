@@ -49,14 +49,17 @@ struct BrewView: View {
             }
             
             if isExpanded {
-                VStack{
-                    LineGraphShape(dataPoints: [0.8, 0.5, 0.3, 0.2, 0.1])
+                VStack {
+                    LineGraphShape(dataPoints: brew.readings.values.map {
+                        CGFloat(($0 as NSString).doubleValue)
+                    })
                         .trim(to: graphOn ? 1 : 0)
                         .stroke(Color.red, lineWidth: 2)
                         .aspectRatio(16/9, contentMode: .fit)
                         .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
                         .padding()
-                    }
+                        //.animation(.linear(duration: 2))
+                }
                     HStack{
                         Button("Alerts") {
                             showAlertsSheet = true

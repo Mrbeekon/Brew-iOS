@@ -28,21 +28,21 @@ struct AlertsSheetView: View {
             }
             let content = UNMutableNotificationContent()
             content.title = "Check your brew 🍺"
-            content.subtitle = "It's time to take a reading of " + brew.name
+            content.subtitle = brew.name + "is waiting for a reading!"
             content.sound = UNNotificationSound.default
 
             let components = Calendar.current.dateComponents([.hour, .minute], from: time)
             let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
             //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
             // choose a random identifier
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            let request = UNNotificationRequest(identifier: brew.id.uuidString, content: content, trigger: trigger)
             
 
             // add our notification request
             UNUserNotificationCenter.current().add(request)
         } else {
-            print("off")
-            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [brew.id.uuidString])
+            print("Reminder off")
         }
     }
     
@@ -55,13 +55,18 @@ struct AlertsSheetView: View {
                             selection: $time,
                             displayedComponents: [.hourAndMinute])
                         Toggle("Start notification", isOn: $brew.notificationIsSet)
-                            .onChange(of: brew.notificationIsSet){ value in
-                                setNotification()
-                            }
                     }
                     Section{
                         Button(action: {
                             print("Reminder Done")
+                            setNotification()
+                            do {
+                                try viewContext.save()
+                                self.brew.objectWillChange.send()
+                                presentationMode.wrappedValue.dismiss()
+                            } catch {
+                                print(error.localizedDescription)
+                            }
                             presentationMode.wrappedValue.dismiss()
                         }) {
                             Text("Done")
