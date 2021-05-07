@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221FDBB72645529E00F132FC /* ReadingsGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221FDBB62645529E00F132FC /* ReadingsGraph.swift */; };
+		221FDBBE26458A4100F132FC /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 221FDBBD26458A4100F132FC /* SwiftUICharts */; };
 		2222844926303A6C00BA5FC8 /* BrewModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2222844726303A6C00BA5FC8 /* BrewModel.xcdatamodeld */; };
 		222284E026303F1C00BA5FC8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284DF26303F1C00BA5FC8 /* Persistence.swift */; };
 		222284EC263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284EA263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift */; };
@@ -47,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		221FDBB62645529E00F132FC /* ReadingsGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingsGraph.swift; sourceTree = "<group>"; };
 		2222844826303A6C00BA5FC8 /* BrewModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BrewModel.xcdatamodel; sourceTree = "<group>"; };
 		222284DF26303F1C00BA5FC8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		222284EA263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				221FDBBE26458A4100F132FC /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +125,7 @@
 				222285072631AA4200BA5FC8 /* AddReadingSheetView.swift */,
 				228BBD65263DB3D9000E2111 /* ChangeNameSheetView.swift */,
 				228BBD67263DB618000E2111 /* ChangeReadingSheetView.swift */,
+				221FDBB62645529E00F132FC /* ReadingsGraph.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,6 +209,9 @@
 			dependencies = (
 			);
 			name = Bubbler;
+			packageProductDependencies = (
+				221FDBBD26458A4100F132FC /* SwiftUICharts */,
+			);
 			productName = Bubbler;
 			productReference = 2256D0E72608DA6800C61DC7 /* Bubbler.app */;
 			productType = "com.apple.product-type.application";
@@ -275,6 +283,9 @@
 				Base,
 			);
 			mainGroup = 2256D0DE2608DA6800C61DC7;
+			packageReferences = (
+				221FDBBC26458A4100F132FC /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 2256D0E82608DA6800C61DC7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -323,6 +334,7 @@
 				222285082631AA4200BA5FC8 /* AddReadingSheetView.swift in Sources */,
 				2256D0ED2608DA6800C61DC7 /* ContentView.swift in Sources */,
 				222D50D2262F235F00B69BEF /* Styles.swift in Sources */,
+				221FDBB72645529E00F132FC /* ReadingsGraph.swift in Sources */,
 				228BBD64263C4793000E2111 /* LineGraphShape.swift in Sources */,
 				2222844926303A6C00BA5FC8 /* BrewModel.xcdatamodeld in Sources */,
 				222284E026303F1C00BA5FC8 /* Persistence.swift in Sources */,
@@ -652,6 +664,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		221FDBBC26458A4100F132FC /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		221FDBBD26458A4100F132FC /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 221FDBBC26458A4100F132FC /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2222844726303A6C00BA5FC8 /* BrewModel.xcdatamodeld */ = {

@@ -9,6 +9,7 @@
 // View for a brew item on the main page
 
 import SwiftUI
+import SwiftUICharts
 
 struct BrewView: View {
     
@@ -25,6 +26,9 @@ struct BrewView: View {
     @State var selectedTag: String?
     
     @State var graphOn = true
+    
+    
+    
     
     var body: some View {
         //GeometryReader { metrics in }
@@ -50,16 +54,11 @@ struct BrewView: View {
             
             if isExpanded {
                 VStack {
-                    LineGraphShape(dataPoints: brew.readings.values.map {
-                        CGFloat(($0 as NSString).doubleValue)
-                    })
-                        .trim(to: graphOn ? 1 : 0)
-                        .stroke(Color.red, lineWidth: 2)
-                        .aspectRatio(16/9, contentMode: .fit)
-                        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
-                        .padding()
-                        //.animation(.linear(duration: 2))
-                }
+                    if brew.readings.isEmpty{
+                        Text("No data yet, add some readings!")
+                    } else {
+                        LineChartView(data: brew.graphValues(), title: "Gravity", legend: "Over time", form: ChartForm.extraLarge, rateValue: nil, dropShadow: false, valueSpecifier: "%.3f") // from SwiftUICharts
+                    }
                     HStack{
                         Button("Alerts") {
                             showAlertsSheet = true
@@ -70,6 +69,7 @@ struct BrewView: View {
                                 }
                         
                         Button(action: {
+                            brew.sortReadings()
                             self.selectedTag = "readings"
                         }, label: {
                             Text("Readings")
@@ -88,13 +88,5 @@ struct BrewView: View {
             }
         }
     }
-
-
-
-/*
-struct BrewView_Previews: PreviewProvider {
-    static var previews: some View {
-        BrewView()
-    }
 }
-*/
+

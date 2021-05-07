@@ -85,7 +85,6 @@ public class BrewEntity: NSManagedObject {
         //should be 3dp as is standard
         cleanReadingValue = String(format: "%.3f", ((cleanReadingValue) as NSString).doubleValue)
         self.readings[readingDate] = cleanReadingValue
-        
         self.sortReadings()
     }
     
@@ -95,5 +94,11 @@ public class BrewEntity: NSManagedObject {
             newDict[tuple.key] = tuple.value
         }
         self.readings = newDict
+    }
+    
+    func graphValues() -> [Double] {
+        return  (self.readings.values.map {
+           ($0 as NSString).doubleValue
+        }).sorted().reversed()
     }
 }

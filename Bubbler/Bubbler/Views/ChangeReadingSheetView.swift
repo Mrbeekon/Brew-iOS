@@ -42,6 +42,7 @@ struct ChangeReadingSheetView: View {
                         guard self.newGravityReading != "" else {return}
                         brew.readings.removeValue(forKey: oldDate)
                         brew.addReading(readingDate: newDateRecorded, readingValue: newGravityReading)
+                        brew.sortReadings()
                         brew.calculateAbv()
                         do {
                             try viewContext.save()

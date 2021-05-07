@@ -39,6 +39,7 @@ struct AddReadingSheetView: View {
                 Section {
                     Button(action: {
                         guard self.gravityReading != "" else {return}
+                        brew.sortReadings()
                         brew.addReading(readingDate: dateRecorded, readingValue: gravityReading)
                         brew.calculateAbv()
                         do {

@@ -59,7 +59,7 @@ struct ReadingsView: View {
                         .multilineTextAlignment(.trailing)
                 }
                 List {
-                    ForEach(brew.readings.sorted(by: <), id: \.key) { key, reading in
+                    ForEach(Array(brew.readings), id: \.key) { key, reading in
                         HStack {
                             Text(reading)
                             Spacer()
