@@ -21,10 +21,18 @@ struct AddSheetView: View {
                 Section(header: Text("Name")) {
                     TextField("Brew Name", text: $brewName)
                 }
-                Section {
-                    Button(action: {
-                        guard self.brewName != "" else {return}
-                            let newBrew = BrewEntity(context: viewContext) //indented?
+            }
+            .navigationTitle("Add Brew")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancel") {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Done") {
+                        guard self.brewName != "" else {return presentationMode.wrappedValue.dismiss()}
+                        let newBrew = BrewEntity(context: viewContext) //indented?
                         newBrew.name = self.brewName
                         newBrew.id = UUID()
                         newBrew.notificationIsSet = false
@@ -35,21 +43,10 @@ struct AddSheetView: View {
                         } catch {
                             print(error.localizedDescription)
                         }
-                    }) {
-                        Text("Add Brew")
                     }
-                }
-                
-                Section {
-                    Button(action: {
-                        print("Cancel Brew")
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Text("Cancel")
-                    }
+                    .buttonStyle(AddButton())
                 }
             }
-            .navigationTitle("Add Brew")
         }
     }
 }

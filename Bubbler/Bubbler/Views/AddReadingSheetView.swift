@@ -36,9 +36,17 @@ struct AddReadingSheetView: View {
                         displayedComponents: [.date, .hourAndMinute]
                     )
                 }
-                Section {
-                    Button(action: {
-                        guard self.gravityReading != "" else {return}
+            }
+            .navigationTitle("Add Gravity Reading")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancel") {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Done") {
+                        guard self.gravityReading != "" else {return presentationMode.wrappedValue.dismiss()}
                         brew.sortReadings()
                         brew.addReading(readingDate: dateRecorded, readingValue: gravityReading)
                         brew.calculateAbv()
@@ -50,21 +58,10 @@ struct AddReadingSheetView: View {
                         } catch {
                             print(error.localizedDescription)
                         }
-                    }) {
-                        Text("Add Reading")
                     }
-                }
-                
-                Section {
-                    Button(action: {
-                        print("Cancel reading")
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Text("Cancel")
-                    }
+                    .buttonStyle(AddButton())
                 }
             }
-            .navigationTitle("Add Gravity Reading")
         }
     }
 }

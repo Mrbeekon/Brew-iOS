@@ -21,10 +21,17 @@ struct ChangeNameSheetView: View {
                 Section(header: Text("Brew Name")) {
                     TextField("New Name", text: $newName)
                 }
-                Section {
-                    Button(action: {
-                        guard self.newName != "" else {return}
-                        
+            }
+            .navigationTitle("Change Brew Name")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancel") {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Done") {
+                        guard self.newName != "" else {return presentationMode.wrappedValue.dismiss()}
                         brew.name = self.newName
                         do {
                             try viewContext.save()
@@ -34,21 +41,10 @@ struct ChangeNameSheetView: View {
                         } catch {
                             print(error.localizedDescription)
                         }
-                    }) {
-                        Text("Save change")
                     }
-                }
-                
-                Section {
-                    Button(action: {
-                        print("Cancel name change")
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Text("Cancel")
-                    }
+                    .buttonStyle(AddButton())
                 }
             }
-            .navigationTitle("Change Brew Name")
         }
     }
 }

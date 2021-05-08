@@ -56,25 +56,29 @@ struct NotificationSheetView: View {
                             displayedComponents: [.hourAndMinute])
                         Toggle("Start notification", isOn: $brew.notificationIsSet)
                     }
-                    Section{
-                        Button(action: {
-                            print("Reminder Done")
-                            setNotification()
-                            do {
-                                try viewContext.save()
-                                self.brew.objectWillChange.send()
-                                presentationMode.wrappedValue.dismiss()
-                            } catch {
-                                print(error.localizedDescription)
-                            }
-                            presentationMode.wrappedValue.dismiss()
-                        }) {
-                            Text("Done")
-                        }
-                    }
                 }
             }
             .navigationTitle("Set a Reminder")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancel") {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Done") {
+                        setNotification()
+                        do {
+                            try viewContext.save()
+                            self.brew.objectWillChange.send()
+                            presentationMode.wrappedValue.dismiss()
+                        } catch {
+                            print(error.localizedDescription)
+                        }
+                    }
+                    .buttonStyle(AddButton())
+                }
+            }
         }
     }
 }

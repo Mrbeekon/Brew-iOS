@@ -37,9 +37,17 @@ struct ChangeReadingSheetView: View {
                         displayedComponents: [.date, .hourAndMinute]
                     )
                 }
-                Section {
-                    Button(action: {
-                        guard self.newGravityReading != "" else {return}
+            }
+            .navigationTitle("Change Gravity Reading")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancel") {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Done") {
+                        guard self.newGravityReading != "" else {return presentationMode.wrappedValue.dismiss()}
                         brew.readings.removeValue(forKey: oldDate)
                         brew.addReading(readingDate: newDateRecorded, readingValue: newGravityReading)
                         brew.sortReadings()
@@ -52,21 +60,10 @@ struct ChangeReadingSheetView: View {
                         } catch {
                             print(error.localizedDescription)
                         }
-                    }) {
-                        Text("Change Reading")
                     }
-                }
-                
-                Section {
-                    Button(action: {
-                        print("Cancel reading")
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Text("Cancel")
-                    }
+                    .buttonStyle(AddButton())
                 }
             }
-            .navigationTitle("Change Gravity Reading")
         }
     }
 }

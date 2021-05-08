@@ -42,6 +42,7 @@ struct BrewsListView: View {
                     BrewView(brew: brew, isExpanded: self.selection.contains(brew))
                         .onTapGesture { self.selectDeselect(brew) }
                         .animation(.linear(duration: 0.3))
+                        .listRowBackground(Color.red) // Uses Color
                 }
                 .onDelete(perform: { indexSet in
                     for index in indexSet {
