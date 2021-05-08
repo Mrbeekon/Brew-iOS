@@ -30,12 +30,11 @@ struct ChangeNameSheetView: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done") {
+                    Button("Change") {
                         guard self.newName != "" else {return presentationMode.wrappedValue.dismiss()}
                         brew.name = self.newName
                         do {
                             try viewContext.save()
-                            print("ABV saved")
                             self.brew.objectWillChange.send()
                             presentationMode.wrappedValue.dismiss()
                         } catch {

@@ -46,7 +46,7 @@ struct ChangeReadingSheetView: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done") {
+                    Button("Change") {
                         guard self.newGravityReading != "" else {return presentationMode.wrappedValue.dismiss()}
                         brew.readings.removeValue(forKey: oldDate)
                         brew.addReading(readingDate: newDateRecorded, readingValue: newGravityReading)
@@ -54,7 +54,6 @@ struct ChangeReadingSheetView: View {
                         brew.calculateAbv()
                         do {
                             try viewContext.save()
-                            print("Reading saved")
                             self.brew.objectWillChange.send()
                             presentationMode.wrappedValue.dismiss()
                         } catch {

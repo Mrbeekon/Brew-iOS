@@ -25,7 +25,7 @@ struct ReadingsView: View {
         }()
     
     var body: some View {
-        NavigationView {
+        //NavigationView {
             VStack {
                 HStack {
                     Button(brew.name){
@@ -90,7 +90,7 @@ struct ReadingsView: View {
                     })
                 }
             }
-        }
+        /*}
         .navigationTitle("Readings")
         .toolbar {
             Button("Add") {
@@ -100,6 +100,6 @@ struct ReadingsView: View {
         }
         .sheet(isPresented: $showAddReadingSheet) {
             AddReadingSheetView(brew: brew)
-            }
+            }*/
     }
 }

@@ -30,7 +30,7 @@ struct AddSheetView: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done") {
+                    Button("Add") {
                         guard self.brewName != "" else {return presentationMode.wrappedValue.dismiss()}
                         let newBrew = BrewEntity(context: viewContext) //indented?
                         newBrew.name = self.brewName

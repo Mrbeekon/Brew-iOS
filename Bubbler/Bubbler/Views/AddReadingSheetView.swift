@@ -45,14 +45,13 @@ struct AddReadingSheetView: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done") {
+                    Button("Add") {
                         guard self.gravityReading != "" else {return presentationMode.wrappedValue.dismiss()}
                         brew.sortReadings()
                         brew.addReading(readingDate: dateRecorded, readingValue: gravityReading)
                         brew.calculateAbv()
                         do {
                             try viewContext.save()
-                            print("ABV saved")
                             self.brew.objectWillChange.send()
                             presentationMode.wrappedValue.dismiss()
                         } catch {
