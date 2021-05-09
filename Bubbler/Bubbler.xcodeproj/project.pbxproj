@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2209135926484D3C00E0D573 /* BeerColourSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2209135826484D3C00E0D573 /* BeerColourSwitcher.swift */; };
 		221FDBBE26458A4100F132FC /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 221FDBBD26458A4100F132FC /* SwiftUICharts */; };
+		221FDBC82647EF3A00F132FC /* CustomColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221FDBC72647EF3A00F132FC /* CustomColours.swift */; };
 		2222844926303A6C00BA5FC8 /* BrewModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2222844726303A6C00BA5FC8 /* BrewModel.xcdatamodeld */; };
 		222284E026303F1C00BA5FC8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284DF26303F1C00BA5FC8 /* Persistence.swift */; };
 		222284EC263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284EA263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2209135826484D3C00E0D573 /* BeerColourSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerColourSwitcher.swift; sourceTree = "<group>"; };
+		221FDBC72647EF3A00F132FC /* CustomColours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColours.swift; sourceTree = "<group>"; };
 		2222844826303A6C00BA5FC8 /* BrewModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BrewModel.xcdatamodel; sourceTree = "<group>"; };
 		222284DF26303F1C00BA5FC8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		222284EA263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 				222D50EC2630360C00B69BEF /* Models */,
 				222284DF26303F1C00BA5FC8 /* Persistence.swift */,
 				222D50D1262F235F00B69BEF /* Styles.swift */,
+				221FDBC72647EF3A00F132FC /* CustomColours.swift */,
+				2209135826484D3C00E0D573 /* BeerColourSwitcher.swift */,
 				2222844726303A6C00BA5FC8 /* BrewModel.xcdatamodeld */,
 				2298D98F263AD16500863263 /* Assets.xcassets */,
 				2256D0F32608DA6900C61DC7 /* Info.plist */,
@@ -327,7 +333,9 @@
 			files = (
 				222284EC263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift in Sources */,
 				222D50CA262EE6DF00B69BEF /* BrewView.swift in Sources */,
+				2209135926484D3C00E0D573 /* BeerColourSwitcher.swift in Sources */,
 				222D50BF262EE47400B69BEF /* BrewsListView.swift in Sources */,
+				221FDBC82647EF3A00F132FC /* CustomColours.swift in Sources */,
 				222285082631AA4200BA5FC8 /* AddReadingSheetView.swift in Sources */,
 				2256D0ED2608DA6800C61DC7 /* ContentView.swift in Sources */,
 				222D50D2262F235F00B69BEF /* Styles.swift in Sources */,

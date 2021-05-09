@@ -48,9 +48,9 @@ struct ChangeReadingSheetView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Change") {
                         guard self.newGravityReading != "" else {return presentationMode.wrappedValue.dismiss()}
+                        print(oldDate)
                         brew.readings.removeValue(forKey: oldDate)
                         brew.addReading(readingDate: newDateRecorded, readingValue: newGravityReading)
-                        brew.sortReadings()
                         brew.calculateAbv()
                         do {
                             try viewContext.save()
@@ -60,7 +60,6 @@ struct ChangeReadingSheetView: View {
                             print(error.localizedDescription)
                         }
                     }
-                    .buttonStyle(AddButton())
                 }
             }
         }

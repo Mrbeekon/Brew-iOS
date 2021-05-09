@@ -47,6 +47,7 @@ struct NotificationSheetView: View {
     }
     
     var body: some View {
+        
         NavigationView {
             VStack {
                 Form {
@@ -56,7 +57,11 @@ struct NotificationSheetView: View {
                             displayedComponents: [.hourAndMinute])
                         Toggle("Start notification", isOn: $brew.notificationIsSet)
                     }
+                    /*Text("Set this notification to remind you to take a reading.")
+                    Text("It's suggested that you take a reading every day to track changes.")
+                    Text("Tip: You should take your readings at a set time and temperature to standardise the results")*/
                 }
+                
             }
             .navigationTitle("Set a Reminder")
             .toolbar {
@@ -76,7 +81,6 @@ struct NotificationSheetView: View {
                             print(error.localizedDescription)
                         }
                     }
-                    .buttonStyle(AddButton())
                 }
             }
         }

@@ -5,6 +5,7 @@
 //  Created by https://www.objc.io/blog/2020/03/16/swiftui-line-graph-animation/
 //  Adapted by Sam Kirk
 //
+
 import SwiftUI
 
 struct LineGraphShape: Shape {

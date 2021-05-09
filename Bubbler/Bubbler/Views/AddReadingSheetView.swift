@@ -58,7 +58,6 @@ struct AddReadingSheetView: View {
                             print(error.localizedDescription)
                         }
                     }
-                    .buttonStyle(AddButton())
                 }
             }
         }

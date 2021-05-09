@@ -44,7 +44,6 @@ struct AddSheetView: View {
                             print(error.localizedDescription)
                         }
                     }
-                    .buttonStyle(AddButton())
                 }
             }
         }

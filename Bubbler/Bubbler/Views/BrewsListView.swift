@@ -27,22 +27,25 @@ struct BrewsListView: View {
     var body: some View {
          List {
             if brews.isEmpty {
-                VStack(alignment: .center, spacing: 10){
-                    Text("Welcome to Bubbler!")
-                    Spacer()
-                    Spacer()
-                    Text("Currently you have no brews to view.")
-                    Spacer()
-                    Text("Lets fix that.")
-                    Spacer()
-                    Text("Press the 'Add' button in the top right.")
+                ForEach(1...1, id: \.self) { i in
+                    VStack(alignment: .leading, spacing: 10){
+                        Text("Welcome to Bubbler! 🍻").bold()
+                        Spacer()
+                        Text("Currently you have no brews to view.")
+                        Spacer()
+                        Text("Lets fix that.")
+                        Spacer()
+                        Text("Press the 'Add' button in the top right.").bold()
+                    }
+                    .listRowBackground(Color.foam)
                 }
+                
             } else {
                 ForEach(brews) { brew in
                     BrewView(brew: brew, isExpanded: self.selection.contains(brew))
                         .onTapGesture { self.selectDeselect(brew) }
                         .animation(.linear(duration: 0.3))
-                        .listRowBackground(Color.red) // Uses Color
+                        .listRowBackground(Color.foam)
                 }
                 .onDelete(perform: { indexSet in
                     for index in indexSet {

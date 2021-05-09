@@ -7,7 +7,10 @@
 
 import SwiftUI
 
+
+
 struct ReadingsView: View {
+    
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var brew: BrewEntity
     
@@ -16,7 +19,6 @@ struct ReadingsView: View {
     @State var newName = ""
     
     @State private var showNameChangeSheet = false
-    @State private var showReadingChangeSheet = false
     
     static let readingDateFormat: DateFormatter = {
             let formatter = DateFormatter()
@@ -25,81 +27,100 @@ struct ReadingsView: View {
         }()
     
     var body: some View {
-        //NavigationView {
+        ZStack{
+            Color.foam.ignoresSafeArea()
             VStack {
+                ZStack{
+                    Color.blue
+                    HStack{
+                        Text(brew.name)
+                            .font(.system(size: 36, weight: .bold))
+                            .foregroundColor(.foam)
+                            .onTapGesture {
+                                showNameChangeSheet = true
+                            }
+                            .sheet(isPresented: $showNameChangeSheet){
+                                ChangeNameSheetView(brew: brew)
+                            }
+                        
+                        Spacer()
+                        ZStack{
+                            Circle()
+                                .fill(
+                                    LinearGradient(
+                                        gradient: Gradient(colors: [.lightGold, .darkGold]),
+                                        startPoint: .topTrailing,
+                                        endPoint: .bottomLeading
+                                    )
+                                )
+                            Text("\(brew.abv ?? "0.00")%")
+                                .font(.system(size: 20, weight: .bold))
+                                .foregroundColor(.offBlack)
+                        }
+                        .frame(width: 70, height: 70, alignment: .center)
+                    }
+                    .padding()
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 0))
+                .frame(height: 75, alignment: .center)
+                .padding(.top, 10)
+                
                 HStack {
-                    Button(brew.name){
-                        print("beep")
-                        showNameChangeSheet = true
-                    }
-                    .buttonStyle(HiddenButton())
-                    .multilineTextAlignment(.leading)
-                    .sheet(isPresented: $showNameChangeSheet){
-                        ChangeNameSheetView(brew: brew)
-                    }
-                    
-                    /*Text(brew.name)
-                        .onTapGesture {
-                            print("boop")
-                            TextField(brew.name, text: $newName)
-                        }*/
-                    
+                    Text("Specific Gravity").foregroundColor(.offBlack).font(.system(size: 20, weight: .bold)).foregroundColor(.offBlack)
                     Spacer()
-                    Text(brew.abv ?? "N/A")
-                        .onAppear{
-                            brew.calculateAbv()
+                    Text("Time and Date").bold().foregroundColor(.offBlack).font(.system(size: 20, weight: .bold)).foregroundColor(.offBlack)
+                }
+                .padding()
+
+                Divider()
+                
+                List {
+                    if brew.readings.isEmpty {
+                        ForEach(1...1, id: \.self) { i in
+                            VStack(alignment: .leading, spacing: 10){
+                                Text("To add a reading press 'Add' in the top right 🌡")
+                            }
+                            .listRowBackground(Color.foam)
+                        }
+                        
+                    } else {
+                        ForEach(Array(brew.readings), id: \.key) { key, reading in
+                            HStack {
+                                Text(reading).foregroundColor(.offBlack).font(.system(size: 20)).foregroundColor(.offBlack)
+                                Spacer()
+                                Text("\(key, formatter: Self.readingDateFormat)").foregroundColor(.offBlack)
+                            }
+                            .listRowBackground(Color.foam)
+                        }
+                        .onDelete(perform: { indexSet in
+                            for index in indexSet {
+                                print(index) //the index in list
+                                // now get date at index
+                                let delDate = Array(brew.readings.keys)[index]
+                                // next delete the item with that key
+                                brew.readings.removeValue(forKey: delDate)
+                                brew.calculateAbv()
+                            }
                             do {
                                 try viewContext.save()
-                                print("ABV saved")
-                                self.brew.objectWillChange.send()
                             } catch {
+                                print("here")
                                 print(error.localizedDescription)
                             }
-                        }
-                        .multilineTextAlignment(.trailing)
-                }
-                List {
-                    ForEach(Array(brew.readings), id: \.key) { key, reading in
-                        HStack {
-                            Text(reading)
-                            Spacer()
-                            Text("\(key, formatter: Self.readingDateFormat)")
-                        }
-                        .onTapGesture {
-                            showReadingChangeSheet = true
-                        }
-                        .sheet(isPresented: $showReadingChangeSheet){
-                            ChangeReadingSheetView(brew: brew, oldDate: key)
-                        }
+                        })
                     }
-                    .onDelete(perform: { indexSet in
-                        for index in indexSet {
-                            print(index) //the index in list
-                            // now get date at index
-                            let delDate = Array(brew.readings.keys)[index]
-                            // next delete the item with that key
-                            brew.readings.removeValue(forKey: delDate)
-                            brew.calculateAbv()
-                        }
-                        do {
-                            try viewContext.save()
-                        } catch {
-                            print("here")
-                            print(error.localizedDescription)
-                        }
-                    })
                 }
             }
-        /*}
+        }
+    
         .navigationTitle("Readings")
         .toolbar {
             Button("Add") {
                 showAddReadingSheet = true
             }
-                .buttonStyle(AddButton())
         }
         .sheet(isPresented: $showAddReadingSheet) {
             AddReadingSheetView(brew: brew)
-            }*/
+        }
     }
 }

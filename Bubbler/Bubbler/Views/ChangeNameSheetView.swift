@@ -41,7 +41,6 @@ struct ChangeNameSheetView: View {
                             print(error.localizedDescription)
                         }
                     }
-                    .buttonStyle(AddButton())
                 }
             }
         }
