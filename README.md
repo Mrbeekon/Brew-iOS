@@ -60,7 +60,7 @@ Also, below are the links to tutorials and code used.
 * []()Working with core data: https://blckbirds.com/post/core-data-and-swiftui/
 * []()Expand and collapse brew item: https://www.vadimbulavin.com/expand-and-collapse-list-with-animation-in-swiftui/
 * []()Local notifications: https://www.hackingwithswift.com/books/ios-swiftui/scheduling-local-notifications
-* []()Lock to porteait: https://stackoverflow.com/questions/28938660/how-to-lock-orientation-of-one-view-controller-to-portrait-mode-only-in-swift
+* []()Lock to portrait: https://stackoverflow.com/questions/28938660/how-to-lock-orientation-of-one-view-controller-to-portrait-mode-only-in-swift
 * []()Grpah library: https://github.com/AppPear/ChartView
 
 
