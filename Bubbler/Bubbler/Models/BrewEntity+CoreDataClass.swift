@@ -13,7 +13,7 @@ import CoreGraphics
 @objc(BrewEntity)
 public class BrewEntity: NSManagedObject {
     let formatter = DateFormatter()
-    let dateFormatString = "d-MM-y"
+    let dateFormatString = "d d-MM-y"
     
     func getOG() -> String {
         var og: String

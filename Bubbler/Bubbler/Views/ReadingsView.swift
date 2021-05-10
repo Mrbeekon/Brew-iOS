@@ -22,7 +22,7 @@ struct ReadingsView: View {
     
     static let readingDateFormat: DateFormatter = {
             let formatter = DateFormatter()
-            formatter.dateFormat = "HH:mm d-MM-y"
+            formatter.dateFormat = "HH:mm dd-MM-y"
             return formatter
         }()
     

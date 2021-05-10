@@ -9,6 +9,8 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     @State private var showAddSheet = false
     
     init() {
@@ -19,6 +21,10 @@ struct ContentView: View {
 
         //Use this if NavigationBarTitle is with displayMode = .inline
         //UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.offBlack]
+    }
+    
+    func viewWillAppear(_ animated: Bool) {
+    AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
     }
     
     var body: some View {

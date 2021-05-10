@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2209135926484D3C00E0D573 /* BeerColourSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2209135826484D3C00E0D573 /* BeerColourSwitcher.swift */; };
+		2209135B26494E8A00E0D573 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2209135A26494E8A00E0D573 /* AppDelegate.swift */; };
 		221FDBBE26458A4100F132FC /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 221FDBBD26458A4100F132FC /* SwiftUICharts */; };
 		221FDBC82647EF3A00F132FC /* CustomColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221FDBC72647EF3A00F132FC /* CustomColours.swift */; };
 		2222844926303A6C00BA5FC8 /* BrewModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2222844726303A6C00BA5FC8 /* BrewModel.xcdatamodeld */; };
@@ -26,7 +27,6 @@
 		2256D0F22608DA6900C61DC7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2256D0F12608DA6900C61DC7 /* Preview Assets.xcassets */; };
 		2256D0FD2608DA6900C61DC7 /* BubblerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256D0FC2608DA6900C61DC7 /* BubblerTests.swift */; };
 		2256D1082608DA6900C61DC7 /* BubblerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256D1072608DA6900C61DC7 /* BubblerUITests.swift */; };
-		228BBD64263C4793000E2111 /* LineGraphShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228BBD63263C4793000E2111 /* LineGraphShape.swift */; };
 		228BBD66263DB3D9000E2111 /* ChangeNameSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228BBD65263DB3D9000E2111 /* ChangeNameSheetView.swift */; };
 		228BBD68263DB618000E2111 /* ChangeReadingSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228BBD67263DB618000E2111 /* ChangeReadingSheetView.swift */; };
 		2298D990263AD16500863263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2298D98F263AD16500863263 /* Assets.xcassets */; };
@@ -51,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		2209135826484D3C00E0D573 /* BeerColourSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerColourSwitcher.swift; sourceTree = "<group>"; };
+		2209135A26494E8A00E0D573 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		221FDBC72647EF3A00F132FC /* CustomColours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColours.swift; sourceTree = "<group>"; };
 		2222844826303A6C00BA5FC8 /* BrewModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BrewModel.xcdatamodel; sourceTree = "<group>"; };
 		222284DF26303F1C00BA5FC8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -74,7 +75,6 @@
 		2256D1032608DA6900C61DC7 /* BubblerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BubblerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2256D1072608DA6900C61DC7 /* BubblerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblerUITests.swift; sourceTree = "<group>"; };
 		2256D1092608DA6900C61DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		228BBD63263C4793000E2111 /* LineGraphShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraphShape.swift; sourceTree = "<group>"; };
 		228BBD65263DB3D9000E2111 /* ChangeNameSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameSheetView.swift; sourceTree = "<group>"; };
 		228BBD67263DB618000E2111 /* ChangeReadingSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeReadingSheetView.swift; sourceTree = "<group>"; };
 		2298D98F263AD16500863263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,6 +111,7 @@
 			children = (
 				222284EA263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift */,
 				222284EB263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift */,
+				2222844726303A6C00BA5FC8 /* BrewModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -155,14 +156,13 @@
 			isa = PBXGroup;
 			children = (
 				2256D0EA2608DA6800C61DC7 /* BubblerApp.swift */,
-				228BBD63263C4793000E2111 /* LineGraphShape.swift */,
+				2209135A26494E8A00E0D573 /* AppDelegate.swift */,
 				222D50F12630368300B69BEF /* Views */,
 				222D50EC2630360C00B69BEF /* Models */,
 				222284DF26303F1C00BA5FC8 /* Persistence.swift */,
 				222D50D1262F235F00B69BEF /* Styles.swift */,
 				221FDBC72647EF3A00F132FC /* CustomColours.swift */,
 				2209135826484D3C00E0D573 /* BeerColourSwitcher.swift */,
-				2222844726303A6C00BA5FC8 /* BrewModel.xcdatamodeld */,
 				2298D98F263AD16500863263 /* Assets.xcassets */,
 				2256D0F32608DA6900C61DC7 /* Info.plist */,
 				2256D0F02608DA6900C61DC7 /* Preview Content */,
@@ -339,11 +339,11 @@
 				222285082631AA4200BA5FC8 /* AddReadingSheetView.swift in Sources */,
 				2256D0ED2608DA6800C61DC7 /* ContentView.swift in Sources */,
 				222D50D2262F235F00B69BEF /* Styles.swift in Sources */,
-				228BBD64263C4793000E2111 /* LineGraphShape.swift in Sources */,
 				2222844926303A6C00BA5FC8 /* BrewModel.xcdatamodeld in Sources */,
 				222284E026303F1C00BA5FC8 /* Persistence.swift in Sources */,
 				222284FD263074D000BA5FC8 /* AddSheetView.swift in Sources */,
 				222284ED263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift in Sources */,
+				2209135B26494E8A00E0D573 /* AppDelegate.swift in Sources */,
 				228BBD68263DB618000E2111 /* ChangeReadingSheetView.swift in Sources */,
 				222D50DA262F2B4400B69BEF /* ReadingsView.swift in Sources */,
 				2256D0EB2608DA6800C61DC7 /* BubblerApp.swift in Sources */,
@@ -518,7 +518,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = samkirkapps.Bubbler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -540,7 +540,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = samkirkapps.Bubbler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
