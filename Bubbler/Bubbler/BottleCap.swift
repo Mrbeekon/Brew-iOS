@@ -3,6 +3,7 @@
 //  Bubbler
 //
 //  Created by Sam Kirk on 10/05/2021.
+//  Converter used: https://quassummanus.github.io/SVG-to-SwiftUI/
 //
 import SwiftUI
 

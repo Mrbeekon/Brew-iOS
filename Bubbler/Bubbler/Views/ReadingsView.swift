@@ -54,22 +54,12 @@ struct ReadingsView: View {
                                         endPoint: .bottomLeading
                                     )
                                 )
-                                .frame(width: 69, height: 69, alignment: .center)
-                                //.shadow(radius: 4, x: -2, y: 4)
-                            BottleCap()
-                                .fill(
-                                    LinearGradient(
-                                        gradient: Gradient(colors: [.lighterGold, .darkerGold2]),
-                                        startPoint: .topTrailing,
-                                        endPoint: .bottomLeading
-                                    )
-                                )
-                                .frame(width: 71, height: 71, alignment: .center)
+                                .frame(width: 70, height: 70, alignment: .center)
+                                .shadow(radius: 4, x: -2, y: 4)
                             Text("\(brew.abv ?? "0.00")%")
                                 .font(.system(size: 20, weight: .bold))
                                 .foregroundColor(.offBlack)
                         }
-                        //.frame(width: 70, height: 70, alignment: .center)
                     }
                     .padding()
                 }

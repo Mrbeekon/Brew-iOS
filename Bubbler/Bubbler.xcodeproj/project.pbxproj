@@ -30,6 +30,7 @@
 		228BBD66263DB3D9000E2111 /* ChangeNameSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228BBD65263DB3D9000E2111 /* ChangeNameSheetView.swift */; };
 		228BBD68263DB618000E2111 /* ChangeReadingSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228BBD67263DB618000E2111 /* ChangeReadingSheetView.swift */; };
 		2290854526495B6600CAFB98 /* BottleCap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290854426495B6600CAFB98 /* BottleCap.swift */; };
+		22908547264986A100CAFB98 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22908546264986A100CAFB98 /* Launch Screen.storyboard */; };
 		2298D990263AD16500863263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2298D98F263AD16500863263 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		228BBD65263DB3D9000E2111 /* ChangeNameSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameSheetView.swift; sourceTree = "<group>"; };
 		228BBD67263DB618000E2111 /* ChangeReadingSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeReadingSheetView.swift; sourceTree = "<group>"; };
 		2290854426495B6600CAFB98 /* BottleCap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleCap.swift; sourceTree = "<group>"; };
+		22908546264986A100CAFB98 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		2298D98F263AD16500863263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,15 +161,16 @@
 			children = (
 				2256D0EA2608DA6800C61DC7 /* BubblerApp.swift */,
 				2209135A26494E8A00E0D573 /* AppDelegate.swift */,
-				2290854426495B6600CAFB98 /* BottleCap.swift */,
 				222D50F12630368300B69BEF /* Views */,
 				222D50EC2630360C00B69BEF /* Models */,
 				222284DF26303F1C00BA5FC8 /* Persistence.swift */,
+				2290854426495B6600CAFB98 /* BottleCap.swift */,
 				222D50D1262F235F00B69BEF /* Styles.swift */,
 				221FDBC72647EF3A00F132FC /* CustomColours.swift */,
 				2209135826484D3C00E0D573 /* BeerColourSwitcher.swift */,
 				2298D98F263AD16500863263 /* Assets.xcassets */,
 				2256D0F32608DA6900C61DC7 /* Info.plist */,
+				22908546264986A100CAFB98 /* Launch Screen.storyboard */,
 				2256D0F02608DA6900C61DC7 /* Preview Content */,
 			);
 			path = Bubbler;
@@ -308,6 +311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22908547264986A100CAFB98 /* Launch Screen.storyboard in Resources */,
 				2256D0F22608DA6900C61DC7 /* Preview Assets.xcassets in Resources */,
 				2298D990263AD16500863263 /* Assets.xcassets in Resources */,
 			);
