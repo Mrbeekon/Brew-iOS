@@ -28,7 +28,6 @@
 		2256D0FD2608DA6900C61DC7 /* BubblerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256D0FC2608DA6900C61DC7 /* BubblerTests.swift */; };
 		2256D1082608DA6900C61DC7 /* BubblerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256D1072608DA6900C61DC7 /* BubblerUITests.swift */; };
 		228BBD66263DB3D9000E2111 /* ChangeNameSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228BBD65263DB3D9000E2111 /* ChangeNameSheetView.swift */; };
-		228BBD68263DB618000E2111 /* ChangeReadingSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228BBD67263DB618000E2111 /* ChangeReadingSheetView.swift */; };
 		2290854526495B6600CAFB98 /* BottleCap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290854426495B6600CAFB98 /* BottleCap.swift */; };
 		22908547264986A100CAFB98 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22908546264986A100CAFB98 /* Launch Screen.storyboard */; };
 		2298D990263AD16500863263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2298D98F263AD16500863263 /* Assets.xcassets */; };
@@ -78,7 +77,6 @@
 		2256D1072608DA6900C61DC7 /* BubblerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblerUITests.swift; sourceTree = "<group>"; };
 		2256D1092608DA6900C61DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		228BBD65263DB3D9000E2111 /* ChangeNameSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameSheetView.swift; sourceTree = "<group>"; };
-		228BBD67263DB618000E2111 /* ChangeReadingSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeReadingSheetView.swift; sourceTree = "<group>"; };
 		2290854426495B6600CAFB98 /* BottleCap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleCap.swift; sourceTree = "<group>"; };
 		22908546264986A100CAFB98 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		2298D98F263AD16500863263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 				222284FC263074D000BA5FC8 /* AddSheetView.swift */,
 				222285072631AA4200BA5FC8 /* AddReadingSheetView.swift */,
 				228BBD65263DB3D9000E2111 /* ChangeNameSheetView.swift */,
-				228BBD67263DB618000E2111 /* ChangeReadingSheetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -352,7 +349,6 @@
 				222284ED263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift in Sources */,
 				2290854526495B6600CAFB98 /* BottleCap.swift in Sources */,
 				2209135B26494E8A00E0D573 /* AppDelegate.swift in Sources */,
-				228BBD68263DB618000E2111 /* ChangeReadingSheetView.swift in Sources */,
 				222D50DA262F2B4400B69BEF /* ReadingsView.swift in Sources */,
 				2256D0EB2608DA6800C61DC7 /* BubblerApp.swift in Sources */,
 				222284F526304B7100BA5FC8 /* NotificationSheetView.swift in Sources */,
