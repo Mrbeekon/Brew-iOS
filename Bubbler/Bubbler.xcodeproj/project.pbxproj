@@ -3,15 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2209135926484D3C00E0D573 /* BeerColourSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2209135826484D3C00E0D573 /* BeerColourSwitcher.swift */; };
+		2209135B26494E8A00E0D573 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2209135A26494E8A00E0D573 /* AppDelegate.swift */; };
+		221FDBBE26458A4100F132FC /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 221FDBBD26458A4100F132FC /* SwiftUICharts */; };
+		221FDBC82647EF3A00F132FC /* CustomColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221FDBC72647EF3A00F132FC /* CustomColours.swift */; };
 		2222844926303A6C00BA5FC8 /* BrewModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2222844726303A6C00BA5FC8 /* BrewModel.xcdatamodeld */; };
 		222284E026303F1C00BA5FC8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284DF26303F1C00BA5FC8 /* Persistence.swift */; };
 		222284EC263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284EA263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift */; };
 		222284ED263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284EB263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift */; };
-		222284F526304B7100BA5FC8 /* AlertsSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284F426304B7100BA5FC8 /* AlertsSheetView.swift */; };
+		222284F526304B7100BA5FC8 /* NotificationSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284F426304B7100BA5FC8 /* NotificationSheetView.swift */; };
 		222284FD263074D000BA5FC8 /* AddSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284FC263074D000BA5FC8 /* AddSheetView.swift */; };
 		222285082631AA4200BA5FC8 /* AddReadingSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222285072631AA4200BA5FC8 /* AddReadingSheetView.swift */; };
 		222D50BF262EE47400B69BEF /* BrewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D50BE262EE47400B69BEF /* BrewsListView.swift */; };
@@ -20,10 +24,13 @@
 		222D50DA262F2B4400B69BEF /* ReadingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D50D9262F2B4400B69BEF /* ReadingsView.swift */; };
 		2256D0EB2608DA6800C61DC7 /* BubblerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256D0EA2608DA6800C61DC7 /* BubblerApp.swift */; };
 		2256D0ED2608DA6800C61DC7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256D0EC2608DA6800C61DC7 /* ContentView.swift */; };
-		2256D0EF2608DA6900C61DC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2256D0EE2608DA6900C61DC7 /* Assets.xcassets */; };
 		2256D0F22608DA6900C61DC7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2256D0F12608DA6900C61DC7 /* Preview Assets.xcassets */; };
 		2256D0FD2608DA6900C61DC7 /* BubblerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256D0FC2608DA6900C61DC7 /* BubblerTests.swift */; };
 		2256D1082608DA6900C61DC7 /* BubblerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256D1072608DA6900C61DC7 /* BubblerUITests.swift */; };
+		228BBD66263DB3D9000E2111 /* ChangeNameSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228BBD65263DB3D9000E2111 /* ChangeNameSheetView.swift */; };
+		2290854526495B6600CAFB98 /* BottleCap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290854426495B6600CAFB98 /* BottleCap.swift */; };
+		22908547264986A100CAFB98 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22908546264986A100CAFB98 /* Launch Screen.storyboard */; };
+		2298D990263AD16500863263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2298D98F263AD16500863263 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +51,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2209135826484D3C00E0D573 /* BeerColourSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerColourSwitcher.swift; sourceTree = "<group>"; };
+		2209135A26494E8A00E0D573 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		221FDBC72647EF3A00F132FC /* CustomColours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColours.swift; sourceTree = "<group>"; };
 		2222844826303A6C00BA5FC8 /* BrewModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BrewModel.xcdatamodel; sourceTree = "<group>"; };
 		222284DF26303F1C00BA5FC8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		222284EA263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		222284EB263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrewEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		222284F426304B7100BA5FC8 /* AlertsSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsSheetView.swift; sourceTree = "<group>"; };
+		222284F426304B7100BA5FC8 /* NotificationSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSheetView.swift; sourceTree = "<group>"; };
 		222284FC263074D000BA5FC8 /* AddSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSheetView.swift; sourceTree = "<group>"; };
 		222285072631AA4200BA5FC8 /* AddReadingSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReadingSheetView.swift; sourceTree = "<group>"; };
 		222D50BE262EE47400B69BEF /* BrewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewsListView.swift; sourceTree = "<group>"; };
@@ -58,7 +68,6 @@
 		2256D0E72608DA6800C61DC7 /* Bubbler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bubbler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2256D0EA2608DA6800C61DC7 /* BubblerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblerApp.swift; sourceTree = "<group>"; };
 		2256D0EC2608DA6800C61DC7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		2256D0EE2608DA6900C61DC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2256D0F12608DA6900C61DC7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2256D0F32608DA6900C61DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2256D0F82608DA6900C61DC7 /* BubblerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BubblerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +76,10 @@
 		2256D1032608DA6900C61DC7 /* BubblerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BubblerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2256D1072608DA6900C61DC7 /* BubblerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblerUITests.swift; sourceTree = "<group>"; };
 		2256D1092608DA6900C61DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		228BBD65263DB3D9000E2111 /* ChangeNameSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameSheetView.swift; sourceTree = "<group>"; };
+		2290854426495B6600CAFB98 /* BottleCap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleCap.swift; sourceTree = "<group>"; };
+		22908546264986A100CAFB98 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		2298D98F263AD16500863263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				221FDBBE26458A4100F132FC /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +113,7 @@
 			children = (
 				222284EA263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift */,
 				222284EB263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift */,
+				2222844726303A6C00BA5FC8 /* BrewModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -110,9 +125,10 @@
 				222D50BE262EE47400B69BEF /* BrewsListView.swift */,
 				222D50C9262EE6DF00B69BEF /* BrewView.swift */,
 				222D50D9262F2B4400B69BEF /* ReadingsView.swift */,
-				222284F426304B7100BA5FC8 /* AlertsSheetView.swift */,
+				222284F426304B7100BA5FC8 /* NotificationSheetView.swift */,
 				222284FC263074D000BA5FC8 /* AddSheetView.swift */,
 				222285072631AA4200BA5FC8 /* AddReadingSheetView.swift */,
+				228BBD65263DB3D9000E2111 /* ChangeNameSheetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,13 +157,17 @@
 			isa = PBXGroup;
 			children = (
 				2256D0EA2608DA6800C61DC7 /* BubblerApp.swift */,
+				2209135A26494E8A00E0D573 /* AppDelegate.swift */,
 				222D50F12630368300B69BEF /* Views */,
 				222D50EC2630360C00B69BEF /* Models */,
 				222284DF26303F1C00BA5FC8 /* Persistence.swift */,
+				2290854426495B6600CAFB98 /* BottleCap.swift */,
 				222D50D1262F235F00B69BEF /* Styles.swift */,
-				2222844726303A6C00BA5FC8 /* BrewModel.xcdatamodeld */,
-				2256D0EE2608DA6900C61DC7 /* Assets.xcassets */,
+				221FDBC72647EF3A00F132FC /* CustomColours.swift */,
+				2209135826484D3C00E0D573 /* BeerColourSwitcher.swift */,
+				2298D98F263AD16500863263 /* Assets.xcassets */,
 				2256D0F32608DA6900C61DC7 /* Info.plist */,
+				22908546264986A100CAFB98 /* Launch Screen.storyboard */,
 				2256D0F02608DA6900C61DC7 /* Preview Content */,
 			);
 			path = Bubbler;
@@ -195,6 +215,9 @@
 			dependencies = (
 			);
 			name = Bubbler;
+			packageProductDependencies = (
+				221FDBBD26458A4100F132FC /* SwiftUICharts */,
+			);
 			productName = Bubbler;
 			productReference = 2256D0E72608DA6800C61DC7 /* Bubbler.app */;
 			productType = "com.apple.product-type.application";
@@ -266,6 +289,9 @@
 				Base,
 			);
 			mainGroup = 2256D0DE2608DA6800C61DC7;
+			packageReferences = (
+				221FDBBC26458A4100F132FC /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 2256D0E82608DA6800C61DC7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -282,8 +308,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22908547264986A100CAFB98 /* Launch Screen.storyboard in Resources */,
 				2256D0F22608DA6900C61DC7 /* Preview Assets.xcassets in Resources */,
-				2256D0EF2608DA6900C61DC7 /* Assets.xcassets in Resources */,
+				2298D990263AD16500863263 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +337,9 @@
 			files = (
 				222284EC263042E500BA5FC8 /* BrewEntity+CoreDataClass.swift in Sources */,
 				222D50CA262EE6DF00B69BEF /* BrewView.swift in Sources */,
+				2209135926484D3C00E0D573 /* BeerColourSwitcher.swift in Sources */,
 				222D50BF262EE47400B69BEF /* BrewsListView.swift in Sources */,
+				221FDBC82647EF3A00F132FC /* CustomColours.swift in Sources */,
 				222285082631AA4200BA5FC8 /* AddReadingSheetView.swift in Sources */,
 				2256D0ED2608DA6800C61DC7 /* ContentView.swift in Sources */,
 				222D50D2262F235F00B69BEF /* Styles.swift in Sources */,
@@ -318,9 +347,12 @@
 				222284E026303F1C00BA5FC8 /* Persistence.swift in Sources */,
 				222284FD263074D000BA5FC8 /* AddSheetView.swift in Sources */,
 				222284ED263042E500BA5FC8 /* BrewEntity+CoreDataProperties.swift in Sources */,
+				2290854526495B6600CAFB98 /* BottleCap.swift in Sources */,
+				2209135B26494E8A00E0D573 /* AppDelegate.swift in Sources */,
 				222D50DA262F2B4400B69BEF /* ReadingsView.swift in Sources */,
 				2256D0EB2608DA6800C61DC7 /* BubblerApp.swift in Sources */,
-				222284F526304B7100BA5FC8 /* AlertsSheetView.swift in Sources */,
+				222284F526304B7100BA5FC8 /* NotificationSheetView.swift in Sources */,
+				228BBD66263DB3D9000E2111 /* ChangeNameSheetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,7 +522,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = samkirkapps.Bubbler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -512,7 +544,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = samkirkapps.Bubbler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -640,6 +672,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		221FDBBC26458A4100F132FC /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		221FDBBD26458A4100F132FC /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 221FDBBC26458A4100F132FC /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2222844726303A6C00BA5FC8 /* BrewModel.xcdatamodeld */ = {

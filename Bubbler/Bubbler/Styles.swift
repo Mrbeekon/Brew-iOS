@@ -7,37 +7,29 @@
 
 import SwiftUI
 
-extension Color {
-    static let offWhite = Color(red: 225 / 255, green: 225 / 255, blue: 235 / 255)
-    static let foam = Color(red: 0.965, green: 0.965, blue: 0.89)
-    static let beerAmber = Color(red: 0.942, green: 0.717, blue: 0.271)
-    static let bottleGreen = Color(red: 0.222, green: 0.587, blue: 0.108)
-    static let bottleBrown = Color(red: 0.621, green: 0.372, blue: 0)
-}
-
-// Buttons
-struct AddButton: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration
-            .label
-            .foregroundColor(configuration.isPressed ? .gray : .white)
-            .padding()
-            .background(Color.accentColor)
-            .cornerRadius(20)
-            .shadow(radius: 2, x: 0, y: 3)
-            
-    }
-}
-
 struct AlertsButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration
             .label
+            .frame(minWidth: 0, maxWidth: .infinity)
             .foregroundColor(configuration.isPressed ? .gray : .white)
             .padding()
-            .background(Color.bottleBrown)
-            .cornerRadius(20)
-            //.shadow(radius: 2, x: 0, y: 3)
-            
+            .background(Color.bottleGreen)
+            .cornerRadius(5)
+            .animation(.easeOut(duration: 0.2))
+            .shadow(radius: 4, x: -3, y: 4)
+    }
+}
+
+struct ReadingsButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration
+            .label
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .foregroundColor(configuration.isPressed ? .gray : .white)
+            .padding()
+            .background(Color.blue)
+            .cornerRadius(5)
+            .shadow(radius: 4, x: -2, y: 4)
     }
 }

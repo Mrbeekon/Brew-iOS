@@ -1,27 +1,29 @@
 //
-//  AddSheetView.swift
+//  AddReadingSheetView.swift
 //  Bubbler
 //
-//  Created by Sam Kirk on 21/04/2021.
+//  Created by Sam Kirk on 22/04/2021.
 //
-//  Sheet to add a new brew
+//  sheet view to chnage the name of a brew
 
 import SwiftUI
 
-struct AddSheetView: View {
+struct ChangeNameSheetView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment (\.presentationMode) var presentationMode
     
-    @State var brewName = ""
+    @State var newName = ""
+    
+    @ObservedObject var brew: BrewEntity
     
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Name")) {
-                    TextField("Brew Name", text: $brewName)
+                Section(header: Text("Brew Name")) {
+                    TextField("New Name", text: $newName)
                 }
             }
-            .navigationTitle("Add Brew")
+            .navigationTitle("Change Brew Name")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel") {
@@ -29,16 +31,12 @@ struct AddSheetView: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Add") {
-                        // if no name Add sheet will just dismiss
-                        guard self.brewName != "" else {return presentationMode.wrappedValue.dismiss()}
-                        let newBrew = BrewEntity(context: viewContext)
-                        newBrew.name = self.brewName
-                        newBrew.id = UUID()
-                        newBrew.notificationIsSet = false
+                    Button("Change") {
+                        guard self.newName != "" else {return presentationMode.wrappedValue.dismiss()}
+                        brew.name = self.newName
                         do {
                             try viewContext.save()
-                            print("Brew saved")
+                            self.brew.objectWillChange.send()
                             presentationMode.wrappedValue.dismiss()
                         } catch {
                             print(error.localizedDescription)
