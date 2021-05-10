@@ -45,7 +45,7 @@
 
 This system was developed to allow users to track their homebrew gravity readings in a convinient place. Each brew has a set of gravity readings that can be added to and displayed as a graph. Additionally, the ABV is automatically calculated as you add readings. You can also set reminders to take a reading at a set time every day.
 
-The app is designed to work on iPhone (X, XS, 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 12 Mini and SE 2nd gen)
+The app is designed to work on iPhone (X, XS, 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 12 Mini and SE 2nd gen).
 
 
 ### Built With
