@@ -19,6 +19,7 @@ struct ReadingsView: View {
     @State var newName = ""
     
     @State private var showNameChangeSheet = false
+    @State private var showReadingChangeSheet = false
     
     static let readingDateFormat: DateFormatter = {
             let formatter = DateFormatter()
@@ -41,8 +42,8 @@ struct ReadingsView: View {
                             }
                             .sheet(isPresented: $showNameChangeSheet){
                                 ChangeNameSheetView(brew: brew)
-                            }.shadow(radius: 4, x: -2, y: 4)
-                        
+                            }
+                            .shadow(radius: 4, x: -2, y: 4)
                         Spacer()
                         
                         ZStack{
@@ -91,6 +92,7 @@ struct ReadingsView: View {
                                 Text(reading).foregroundColor(.offBlack).font(.system(size: 20)).foregroundColor(.offBlack)
                                 Spacer()
                                 Text("\(key, formatter: Self.readingDateFormat)").foregroundColor(.offBlack)
+                                    
                             }
                             .listRowBackground(Color.foam)
                         }
@@ -101,7 +103,7 @@ struct ReadingsView: View {
                                 let tuple = Array(brew.readings.sorted(by: <))[index]
                                 print("tuple = ", tuple)
                                 let delDate = tuple.key
-                                print("key = ", delDate)
+                                print("date key = ", delDate)
                                 // next delete the item with that key
                                 brew.readings.removeValue(forKey: delDate)
                                 brew.calculateAbv()
@@ -113,22 +115,7 @@ struct ReadingsView: View {
                                 print(error.localizedDescription)
                             }
                         })
-                        /*.onDelete(perform: { indexSet in
-                            for index in indexSet {
-                                print("index = ", index) //the index in list
-                                // now get date at index
-                                let delDate = Array(brew.readings.keys)[index]
-                                // next delete the item with that key
-                                brew.readings.removeValue(forKey: delDate)
-                                brew.calculateAbv()
-                            }
-                            do {
-                                try viewContext.save()
-                            } catch {
-                                print("here")
-                                print(error.localizedDescription)
-                            }
-                        })*/
+                        
                     }
                 }
             }
