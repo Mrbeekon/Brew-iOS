@@ -119,7 +119,6 @@ struct BrewView: View {
                                         }
                                 Spacer()
                                 Button(action: {
-                                    brew.sortReadings()
                                     self.selectedTag = "readings"
                                 }, label: {
                                     Text("Readings")

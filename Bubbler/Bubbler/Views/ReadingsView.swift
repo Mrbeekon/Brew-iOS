@@ -86,7 +86,7 @@ struct ReadingsView: View {
                         }
                         
                     } else {
-                        ForEach(Array(brew.readings), id: \.key) { key, reading in
+                        ForEach(Array(brew.readings.sorted(by: <)), id: \.key) { key, reading in
                             HStack {
                                 Text(reading).foregroundColor(.offBlack).font(.system(size: 20)).foregroundColor(.offBlack)
                                 Spacer()
@@ -96,7 +96,26 @@ struct ReadingsView: View {
                         }
                         .onDelete(perform: { indexSet in
                             for index in indexSet {
-                                print(index) //the index in list
+                                print("index = ", index) //the index in list
+                                // now get date at index
+                                let tuple = Array(brew.readings.sorted(by: <))[index]
+                                print("tuple = ", tuple)
+                                let delDate = tuple.key
+                                print("key = ", delDate)
+                                // next delete the item with that key
+                                brew.readings.removeValue(forKey: delDate)
+                                brew.calculateAbv()
+                            }
+                            do {
+                                try viewContext.save()
+                            } catch {
+                                print("here")
+                                print(error.localizedDescription)
+                            }
+                        })
+                        /*.onDelete(perform: { indexSet in
+                            for index in indexSet {
+                                print("index = ", index) //the index in list
                                 // now get date at index
                                 let delDate = Array(brew.readings.keys)[index]
                                 // next delete the item with that key
@@ -109,7 +128,7 @@ struct ReadingsView: View {
                                 print("here")
                                 print(error.localizedDescription)
                             }
-                        })
+                        })*/
                     }
                 }
             }

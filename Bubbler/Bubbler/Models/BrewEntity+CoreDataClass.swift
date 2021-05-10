@@ -85,16 +85,15 @@ public class BrewEntity: NSManagedObject {
         //should be 3dp as is standard
         cleanReadingValue = String(format: "%.3f", ((cleanReadingValue) as NSString).doubleValue)
         self.readings[readingDate] = cleanReadingValue
-        self.sortReadings()
     }
     
-    func sortReadings() {
+    /*func sortReadings() {
         var newDict:[Date:String] = [:]
         for tuple in self.readings.sorted(by: <) {
             newDict[tuple.key] = tuple.value
         }
         self.readings = newDict
-    }
+    }*/
     
     func graphValues() -> [Double] {
         return  (self.readings.values.map {
