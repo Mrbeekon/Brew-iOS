@@ -49,11 +49,24 @@ struct BrewView: View {
                                             endPoint: .bottomLeading
                                         )
                                     )
+                                    .frame(width: 70, height: 70, alignment: .center)
+                                    .shadow(color: .gray, radius: 4, x: -2, y: 4)
+                                    //.shadow(color: .white, radius: 2, x: 2, y: -4)
+                                BottleCap()
+                                    .fill(
+                                        LinearGradient(
+                                            gradient: Gradient(colors: [.lighterGold, .darkerGold2]),
+                                            startPoint: .topTrailing,
+                                            endPoint: .bottomLeading
+                                        )
+                                    )
+                                    .frame(width: 71, height: 71, alignment: .center)
                                 Text("\(brew.abv ?? "0.00")%")
                                     .font(.system(size: 20, weight: .bold))
                                     .foregroundColor(.offBlack)
                             }
-                            .frame(width: 70, height: 70, alignment: .center)
+                            //.frame(width: 70, height: 70, alignment: .center)
+                            
                         }
                         .padding()
                     }
@@ -129,6 +142,7 @@ struct BrewView: View {
             }
             .clipShape(RoundedRectangle(cornerRadius: 40))
             .padding(5)
+            .shadow(radius: 4, x: -2, y: 4)
         }
         .clipShape(RoundedRectangle(cornerRadius: 45))
     }

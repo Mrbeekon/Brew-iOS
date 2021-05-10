@@ -30,6 +30,17 @@ extension Color {
         return Color(toDecimalRGB: 223, green: 175, blue: 55)
     }
     
+    public static var lighterGold: Color {
+        return Color(toDecimalRGB: 255, green: 257, blue: 176)
+    }
+    
+    public static var darkerGold: Color {
+        return Color(toDecimalRGB: 194, green: 143, blue: 15)
+    }
+    public static var darkerGold2: Color {
+        return Color(toDecimalRGB: 81, green: 59, blue: 5)
+    }
+    
     public static var offBlack: Color {
         return Color(toDecimalRGB: 58, green: 58, blue: 60)
     }

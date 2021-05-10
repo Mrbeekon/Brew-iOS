@@ -19,7 +19,7 @@ struct AlertsButton: ButtonStyle {
             .background(Color.bottleGreen)
             .cornerRadius(5)
             .animation(.easeOut(duration: 0.2))
-            .shadow(radius: 2, x: 0, y: 3)
+            .shadow(radius: 4, x: -3, y: 4)
     }
 }
 
@@ -32,6 +32,6 @@ struct ReadingsButton: ButtonStyle {
             .padding()
             .background(Color.blue)
             .cornerRadius(5)
-            .shadow(radius: 2, x: 0, y: 3)
+            .shadow(radius: 4, x: -2, y: 4)
     }
 }
