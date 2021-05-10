@@ -5,6 +5,8 @@
 //  Created by Sam Kirk on 10/05/2021.
 //  Converter used: https://quassummanus.github.io/SVG-to-SwiftUI/
 //
+//  cretes a bottle cap overlay shape for a circle
+
 import SwiftUI
 
 struct BottleCap: Shape {

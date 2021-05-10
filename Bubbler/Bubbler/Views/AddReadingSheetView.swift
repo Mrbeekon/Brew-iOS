@@ -4,6 +4,7 @@
 //
 //  Created by Sam Kirk on 22/04/2021.
 //
+//  Sheet to add a new reading
 
 import SwiftUI
 import Combine
@@ -25,6 +26,7 @@ struct AddReadingSheetView: View {
                         .keyboardType(.decimalPad)
                         // Only allow numbers and decimals
                         .onReceive(Just(gravityReading)) { newValue in
+                            // inputs are limited to numbers and "." only
                             let filtered = newValue.filter { "0123456789.".contains($0) }
                             if filtered != newValue {
                                 self.gravityReading = filtered
@@ -48,6 +50,7 @@ struct AddReadingSheetView: View {
                     Button("Add") {
                         guard self.gravityReading != "" else {return presentationMode.wrappedValue.dismiss()}
                         brew.addReading(readingDate: dateRecorded, readingValue: gravityReading)
+                        // calulate the new ABV
                         brew.calculateAbv()
                         do {
                             try viewContext.save()

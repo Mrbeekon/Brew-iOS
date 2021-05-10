@@ -4,7 +4,7 @@
 //
 //  Created by Sam Kirk on 09/05/2021.
 //
-//  Purpose: this function takes the brewName as a string and uses it to return a colour that mathces the typical brew colour
+//  These functions take the brewName as a string and uses it to return a colour that mathces the typical brew colour
 
 import SwiftUI
 
@@ -53,7 +53,7 @@ extension Color {
     }
 }
 
-func BeerColurSwitcher(brewName: String) -> Color {
+func BeerColourSwitcher(brewName: String) -> Color {
     let lowerCaseBrewName = brewName.lowercased()
     if lowerCaseBrewName.contains("light"){
         return Color.light
@@ -88,7 +88,8 @@ func BeerColurSwitcher(brewName: String) -> Color {
     }
 }
 
-func FontColurSwitcher(brewName: String) -> Color {
+// Dark colours need a light font and vice versa
+func FontColourSwitcher(brewName: String) -> Color {
     let lowerCaseBrewName = brewName.lowercased()
     if lowerCaseBrewName.contains("amber") || lowerCaseBrewName.contains("red") || lowerCaseBrewName.contains("brown") || lowerCaseBrewName.contains("porter") || lowerCaseBrewName.contains("stout"){
         return Color.foam

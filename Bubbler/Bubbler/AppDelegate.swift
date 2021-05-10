@@ -1,7 +1,7 @@
 //
 //  AppDelegate.swift
 //  Bubbler
-//  Locks roation to portrait
+//  The purpose of this code is to lock the roation to portrait
 // https://stackoverflow.com/questions/28938660/how-to-lock-orientation-of-one-view-controller-to-portrait-mode-only-in-swift
 //
 //

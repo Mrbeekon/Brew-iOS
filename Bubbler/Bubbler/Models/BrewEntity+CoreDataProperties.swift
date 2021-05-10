@@ -4,7 +4,7 @@
 //
 //  Created by Sam Kirk on 21/04/2021.
 //
-//
+//  BrewEntity properties
 
 import Foundation
 import CoreData
@@ -23,7 +23,3 @@ extension BrewEntity: Identifiable{
     @NSManaged public var readings: [Date:String]  //[Double] also works
 
 }
-
-/*extension BrewEntity : Identifiable {
-
-}*/

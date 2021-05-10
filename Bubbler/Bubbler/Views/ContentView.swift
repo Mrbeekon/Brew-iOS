@@ -14,34 +14,29 @@ struct ContentView: View {
     @State private var showAddSheet = false
     
     init() {
+        // Sets the colour but requires editing table view directly
         UITableView.appearance().backgroundColor = .foam // Uses UIColor
-        
-        //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.offBlack]
-
-        //Use this if NavigationBarTitle is with displayMode = .inline
-        //UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.offBlack]
     }
     
     func viewWillAppear(_ animated: Bool) {
-    AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
+        AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
     }
     
     var body: some View {
-        //Text("Bubbler")
         NavigationView {
             BrewsListView()
-            .navigationTitle("Brews")
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button("Add") {
-                        showAddSheet = true
-                    }
-                    .sheet(isPresented: $showAddSheet) {
-                            AddSheetView()
+                .navigationTitle("Brews")
+                .toolbar {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button("Add") {
+                            showAddSheet = true
+                        }
+                        .sheet(isPresented: $showAddSheet) {
+                                AddSheetView()
+                        }
                     }
                 }
-            }
         }
     }
 }

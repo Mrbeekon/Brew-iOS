@@ -2,8 +2,10 @@
 //  Persistence.swift
 //  Bubbler
 //
-//  Created by Sam Kirk on 21/04/2021.
+//  Created by https://blckbirds.com/post/core-data-and-swiftui/
+//  Used by Sam Kirk on 21/04/2021.
 //
+//  Persistance controller
 
 import CoreData
 

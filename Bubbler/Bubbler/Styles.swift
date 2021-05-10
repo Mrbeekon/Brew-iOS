@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// Buttons
-
 struct AlertsButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration

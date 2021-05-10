@@ -4,7 +4,7 @@
 //
 //  Created by Sam Kirk on 21/04/2021.
 //
-//
+//  additionl BrewEntity Functions
 
 import Foundation
 import CoreData
@@ -13,11 +13,11 @@ import CoreGraphics
 @objc(BrewEntity)
 public class BrewEntity: NSManagedObject {
     let formatter = DateFormatter()
-    let dateFormatString = "d d-MM-y"
+    let dateFormatString = "dd-MM-y"
     
+    // will be the first specific gravity reading
     func getOG() -> String {
         var og: String
-        
         //sort dictionary by date
         let sortedReadings = Array(self.readings.sorted(by: <))
         
@@ -26,16 +26,17 @@ public class BrewEntity: NSManagedObject {
         return og
     }
     
+    // will be the last specific gravity reading
     func getFG() -> String {
         var fg: String
         //sort dictionary by date
         let sortedReadings = Array(self.readings.sorted(by: <))
-        
         //get first and last values then string to double
         fg = sortedReadings.last?.value ?? "-"
         return fg
     }
     
+    // the earliest date
     func getStartDate() -> String {
         var date: String
         //sort dictionary by date
@@ -46,6 +47,7 @@ public class BrewEntity: NSManagedObject {
         return date
     }
     
+    // the latest date
     func getEndDate() -> String {
         var date: String
         //sort dictionary by date
@@ -56,6 +58,7 @@ public class BrewEntity: NSManagedObject {
         return date
     }
     
+    // calculates the ABV of the brew
     func calculateAbv(){
         var og: Double
         var fg: Double
@@ -87,14 +90,7 @@ public class BrewEntity: NSManagedObject {
         self.readings[readingDate] = cleanReadingValue
     }
     
-    /*func sortReadings() {
-        var newDict:[Date:String] = [:]
-        for tuple in self.readings.sorted(by: <) {
-            newDict[tuple.key] = tuple.value
-        }
-        self.readings = newDict
-    }*/
-    
+    // graph requires an array of values this function returns the ordered values for the graph
     func graphValues() -> [Double] {
         return  (self.readings.values.map {
            ($0 as NSString).doubleValue

@@ -4,10 +4,9 @@
 //
 //  Created by Sam Kirk on 20/04/2021.
 //
+//  View that displays the brew readings (gravity readings) and their interactions
 
 import SwiftUI
-
-
 
 struct ReadingsView: View {
     
@@ -15,8 +14,6 @@ struct ReadingsView: View {
     @ObservedObject var brew: BrewEntity
     
     @State private var showAddReadingSheet = false
-    
-    @State var newName = ""
     
     @State private var showNameChangeSheet = false
     @State private var showReadingChangeSheet = false
@@ -79,6 +76,7 @@ struct ReadingsView: View {
                 
                 List {
                     if brew.readings.isEmpty {
+                        // ForEach to allow for a list item with the same styling as the readings
                         ForEach(1...1, id: \.self) { i in
                             VStack(alignment: .leading, spacing: 10){
                                 Text("To add a reading press 'Add' in the top right 🌡")
@@ -87,6 +85,7 @@ struct ReadingsView: View {
                         }
                         
                     } else {
+                        // sort the readings by date ascending
                         ForEach(Array(brew.readings.sorted(by: <)), id: \.key) { key, reading in
                             HStack {
                                 Text(reading).foregroundColor(.offBlack).font(.system(size: 20)).foregroundColor(.offBlack)
@@ -120,7 +119,7 @@ struct ReadingsView: View {
                 }
             }
         }
-    
+        // applys to navigation view in ContentView.swift
         .navigationTitle("Readings")
         .toolbar {
             Button("Add") {

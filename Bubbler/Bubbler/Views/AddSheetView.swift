@@ -3,8 +3,8 @@
 //  Bubbler
 //
 //  Created by Sam Kirk on 21/04/2021.
-// help from https://blckbirds.com/post/core-data-and-swiftui/
 //
+//  Sheet to add a new brew
 
 import SwiftUI
 
@@ -13,7 +13,6 @@ struct AddSheetView: View {
     @Environment (\.presentationMode) var presentationMode
     
     @State var brewName = ""
-    @State var dateCreated = Date()
     
     var body: some View {
         NavigationView {
@@ -31,8 +30,9 @@ struct AddSheetView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Add") {
+                        // if no name Add sheet will just dismiss
                         guard self.brewName != "" else {return presentationMode.wrappedValue.dismiss()}
-                        let newBrew = BrewEntity(context: viewContext) //indented?
+                        let newBrew = BrewEntity(context: viewContext)
                         newBrew.name = self.brewName
                         newBrew.id = UUID()
                         newBrew.notificationIsSet = false
@@ -47,11 +47,5 @@ struct AddSheetView: View {
                 }
             }
         }
-    }
-}
-
-struct AddSheetView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddSheetView()
     }
 }

@@ -4,6 +4,7 @@
 //
 //  Created by Sam Kirk on 20/04/2021.
 //
+//  The list view for the brew items
 
 import SwiftUI
 
@@ -15,6 +16,7 @@ struct BrewsListView: View {
     @State private var selection: Set<BrewEntity> = []
     @State private var showAlert: Bool = false
     
+    // control for if a brew item is expanded or not
     func selectDeselect(_ brew: BrewEntity) {
         print("Selected \(brew.id)")
         if selection.contains(brew) {
@@ -49,6 +51,8 @@ struct BrewsListView: View {
                 }
                 .onDelete(perform: { indexSet in
                     for index in indexSet {
+                        // delete any pending notifications for the brew
+                        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [brews[index].id.uuidString])
                         viewContext.delete(brews[index])
                     }
                     do {

@@ -3,7 +3,9 @@
 //  Bubbler
 //
 //  Created by Sam Kirk on 21/04/2021.
+//  adapted from https://www.hackingwithswift.com/books/ios-swiftui/scheduling-local-notifications
 //
+//  Sets the notifications to remind the user to take a reading
 
 import SwiftUI
 import UserNotifications
@@ -18,7 +20,6 @@ struct NotificationSheetView: View {
     
     func setNotification() {
         if brew.notificationIsSet {
-            print("on")
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
                 if success {
                     print("Reminder set")
@@ -26,18 +27,18 @@ struct NotificationSheetView: View {
                     print(error.localizedDescription)
                 }
             }
+            
             let content = UNMutableNotificationContent()
             content.title = "Check your brew 🍺"
-            content.subtitle = brew.name + "is waiting for a reading!"
+            content.subtitle = brew.name + " is waiting for a reading!"
             content.sound = UNNotificationSound.default
 
             let components = Calendar.current.dateComponents([.hour, .minute], from: time)
             let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
-            //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+            
             // choose a random identifier
             let request = UNNotificationRequest(identifier: brew.id.uuidString, content: content, trigger: trigger)
             
-
             // add our notification request
             UNUserNotificationCenter.current().add(request)
         } else {
@@ -47,7 +48,6 @@ struct NotificationSheetView: View {
     }
     
     var body: some View {
-        
         NavigationView {
             VStack {
                 Form {
@@ -57,11 +57,7 @@ struct NotificationSheetView: View {
                             displayedComponents: [.hourAndMinute])
                         Toggle("Start notification", isOn: $brew.notificationIsSet)
                     }
-                    /*Text("Set this notification to remind you to take a reading.")
-                    Text("It's suggested that you take a reading every day to track changes.")
-                    Text("Tip: You should take your readings at a set time and temperature to standardise the results")*/
                 }
-                
             }
             .navigationTitle("Set a Reminder")
             .toolbar {
