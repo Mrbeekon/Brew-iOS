@@ -144,7 +144,7 @@ struct BrewView: View {
             }
             .clipShape(RoundedRectangle(cornerRadius: 40))
             .padding(5)
-            .shadow(radius: 4, x: -2, y: 4)
+            .shadow(color: BeerColourSwitcher(brewName: brew.name), radius: 4, x: -2, y: 4)
         }
         .clipShape(RoundedRectangle(cornerRadius: 45))
     }
