@@ -43,7 +43,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This system was developed to allow users to track their homebrew gravity readings in a convinient place. Each brew has a set of gravity readings that can be added to and displayed as a graph. Additionally, the ABV is automatically calculated as you add readings. You can also set reminders to take a reading at a set time every day.
+This system was developed to allow users to track their homebrew gravity readings in a convenient place. Each brew has a set of gravity readings that can be added to and displayed as a graph. Additionally, the ABV is automatically calculated as you add readings. You can also set reminders to take a reading at a set time every day.
 
 The app is designed to work on iPhone (X, XS, 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 12 Mini and SE 2nd gen).
 
@@ -61,7 +61,7 @@ Also, below are the links to tutorials and code used.
 * []()Expand and collapse brew item: https://www.vadimbulavin.com/expand-and-collapse-list-with-animation-in-swiftui/
 * []()Local notifications: https://www.hackingwithswift.com/books/ios-swiftui/scheduling-local-notifications
 * []()Lock to portrait: https://stackoverflow.com/questions/28938660/how-to-lock-orientation-of-one-view-controller-to-portrait-mode-only-in-swift
-* []()Grpah library: https://github.com/AppPear/ChartView
+* []()Graph library: https://github.com/AppPear/ChartView
 
 
 <!-- GETTING STARTED -->
