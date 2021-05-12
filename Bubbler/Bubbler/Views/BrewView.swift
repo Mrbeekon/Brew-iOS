@@ -90,61 +90,59 @@ struct BrewView: View {
                     
                     // if item is selected
                     if isExpanded {
-                        VStack {
-                            // if there are less than 2 readings for the graph it will be blank
-                            if brew.readings.count < 2{
-                                ZStack{
-                                    RoundedRectangle(cornerRadius: 25)
-                                        .fill(Color.foam)
-                                        .frame(width: 300, height:240)
-                                        
-                                    VStack{
-                                        Spacer()
-                                        Text("Not enough data yet.").font(.system(size: 20, weight: .bold)).foregroundColor(.offBlack)
-                                        Spacer()
-                                        Text("Add some readings! 🚀").font(.system(size: 18, weight: .bold)).foregroundColor(.offBlack)
-                                        Spacer()
-                                    }
+                        // if there are less than 2 readings for the graph it will be blank
+                        if brew.readings.count < 2{
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 25)
+                                    .fill(Color.foam)
+                                    .frame(width: 300, height:240)
+                                    
+                                VStack{
+                                    Spacer()
+                                    Text("Not enough data yet.").font(.system(size: 20, weight: .bold)).foregroundColor(.offBlack)
+                                    Spacer()
+                                    Text("Add some readings! 🚀").font(.system(size: 18, weight: .bold)).foregroundColor(.offBlack)
+                                    Spacer()
                                 }
-                            } else {
-                                // from SwiftUICharts
-                                //Not all params work but all are required
-                                LineChartView(data: brew.graphValues(), title: "Gravity", legend: "Over time", style: ChartStyle.init(backgroundColor: Color.foam, accentColor: Color.red, gradientColor: GradientColor.init(start: Color.green, end: Color.bottleGreen), textColor: Color.offBlack, legendTextColor: Color.gray, dropShadowColor: Color.white), form: CGSize(width:300, height:240), rateValue: nil, dropShadow: false, valueSpecifier: "%.3f")
                             }
-                            HStack{
-                                Button("Alerts") {
-                                    showAlertsSheet = true
-                                }
-                                    .buttonStyle(AlertsButton())
-                                    .sheet(isPresented: $showAlertsSheet) {
-                                        NotificationSheetView(brew: brew)
-                                        }
-                                Spacer()
-                                // Navigating to another page using a button for consistent styling
-                                Button(action: {
-                                    self.selectedTag = "readings"
-                                }, label: {
-                                    Text("Readings")
-                                })
-                                .background(
-                                    NavigationLink(
-                                        destination: ReadingsView(brew: brew),
-                                        tag: "readings",
-                                        selection: $selectedTag,
-                                        label: { EmptyView()}
-                                    )
-                                )
-                                .buttonStyle(ReadingsButton())
-                            }
-                            .padding()
+                        } else {
+                            // from SwiftUICharts
+                            //Not all params work but all are required
+                            LineChartView(data: brew.graphValues(), title: "Gravity", legend: "Over time", style: ChartStyle.init(backgroundColor: Color.foam, accentColor: Color.red, gradientColor: GradientColor.init(start: Color.green, end: Color.bottleGreen), textColor: Color.offBlack, legendTextColor: Color.gray, dropShadowColor: Color.white), form: CGSize(width:300, height:240), rateValue: nil, dropShadow: false, valueSpecifier: "%.3f")
                         }
+                        HStack{
+                            Button("Alerts") {
+                                showAlertsSheet = true
+                            }
+                                .buttonStyle(AlertsButton())
+                                .sheet(isPresented: $showAlertsSheet) {
+                                    NotificationSheetView(brew: brew)
+                                    }
+                            Spacer()
+                            // Navigating to another page using a button for consistent styling
+                            Button(action: {
+                                self.selectedTag = "readings"
+                            }, label: {
+                                Text("Readings")
+                            })
+                            .background(
+                                NavigationLink(
+                                    destination: ReadingsView(brew: brew),
+                                    tag: "readings",
+                                    selection: $selectedTag,
+                                    label: { EmptyView()}
+                                )
+                            )
+                            .buttonStyle(ReadingsButton())
+                        }
+                        .padding()
                     }
                 }
                 .padding()
             }
             .clipShape(RoundedRectangle(cornerRadius: 40))
             .padding(5)
-            .shadow(radius: 4, x: -2, y: 4)
+            .shadow(color: BeerColourSwitcher(brewName: brew.name), radius: 4, x: -2, y: 4)
         }
         .clipShape(RoundedRectangle(cornerRadius: 45))
     }
