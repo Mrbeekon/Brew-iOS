@@ -85,10 +85,10 @@ Run the project in XCode and build to device or simulator.
 4. To delete the brew swipe to the left to show the delete button
 5. To see more info tap the brew item
 6. To set a reminder tap alerts
-7. select a time and date and start the notification
+7. Select a time and date and start the notification
 8. Then tap set
 9. To remove the reminder tap alerts
-10. toggle start notificatio to off and tap set
+10. Toggle start notificatio to off and tap set
 11. To add a reaiding tap readings
 12. Then press add
 13. Enter the reading details and tap add
