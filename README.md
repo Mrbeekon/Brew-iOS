@@ -90,7 +90,7 @@ Run the project in XCode and build to device or simulator.
 7. Select a time and date and start the notification
 8. Then tap set
 9. To remove the reminder tap alerts
-10. Toggle start notificatio to off and tap set
+10. Toggle start notification to off and tap set
 11. To add a reaiding tap readings
 12. Then press add
 13. Enter the reading details and tap add
@@ -102,6 +102,6 @@ Run the project in XCode and build to device or simulator.
 20. To change the brew name go to the readings page and tap the name
 21. Enter the new name and tap Change
 
-That covers the Bubblers functionality, you will see that the ABV will be update with every new reading.
+That covers Bubblers functionality, you will see that the ABV will be update with every new reading.
 
 
