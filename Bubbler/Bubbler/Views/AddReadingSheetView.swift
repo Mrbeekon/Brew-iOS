@@ -48,6 +48,7 @@ struct AddReadingSheetView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Add") {
+                        impactAdd.impactOccurred()
                         guard self.gravityReading != "" else {return presentationMode.wrappedValue.dismiss()}
                         brew.addReading(readingDate: dateRecorded, readingValue: gravityReading)
                         // calulate the new ABV

@@ -18,6 +18,7 @@
 		222284F526304B7100BA5FC8 /* NotificationSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284F426304B7100BA5FC8 /* NotificationSheetView.swift */; };
 		222284FD263074D000BA5FC8 /* AddSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222284FC263074D000BA5FC8 /* AddSheetView.swift */; };
 		222285082631AA4200BA5FC8 /* AddReadingSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222285072631AA4200BA5FC8 /* AddReadingSheetView.swift */; };
+		2224907226550E88004AF4B1 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224907126550E88004AF4B1 /* Haptics.swift */; };
 		222D50BF262EE47400B69BEF /* BrewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D50BE262EE47400B69BEF /* BrewsListView.swift */; };
 		222D50CA262EE6DF00B69BEF /* BrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D50C9262EE6DF00B69BEF /* BrewView.swift */; };
 		222D50D2262F235F00B69BEF /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D50D1262F235F00B69BEF /* Styles.swift */; };
@@ -61,6 +62,7 @@
 		222284F426304B7100BA5FC8 /* NotificationSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSheetView.swift; sourceTree = "<group>"; };
 		222284FC263074D000BA5FC8 /* AddSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSheetView.swift; sourceTree = "<group>"; };
 		222285072631AA4200BA5FC8 /* AddReadingSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReadingSheetView.swift; sourceTree = "<group>"; };
+		2224907126550E88004AF4B1 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		222D50BE262EE47400B69BEF /* BrewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewsListView.swift; sourceTree = "<group>"; };
 		222D50C9262EE6DF00B69BEF /* BrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewView.swift; sourceTree = "<group>"; };
 		222D50D1262F235F00B69BEF /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				222284DF26303F1C00BA5FC8 /* Persistence.swift */,
 				2290854426495B6600CAFB98 /* BottleCap.swift */,
 				222D50D1262F235F00B69BEF /* Styles.swift */,
+				2224907126550E88004AF4B1 /* Haptics.swift */,
 				221FDBC72647EF3A00F132FC /* CustomColours.swift */,
 				2209135826484D3C00E0D573 /* BeerColourSwitcher.swift */,
 				2298D98F263AD16500863263 /* Assets.xcassets */,
@@ -351,6 +354,7 @@
 				2209135B26494E8A00E0D573 /* AppDelegate.swift in Sources */,
 				222D50DA262F2B4400B69BEF /* ReadingsView.swift in Sources */,
 				2256D0EB2608DA6800C61DC7 /* BubblerApp.swift in Sources */,
+				2224907226550E88004AF4B1 /* Haptics.swift in Sources */,
 				222284F526304B7100BA5FC8 /* NotificationSheetView.swift in Sources */,
 				228BBD66263DB3D9000E2111 /* ChangeNameSheetView.swift in Sources */,
 			);

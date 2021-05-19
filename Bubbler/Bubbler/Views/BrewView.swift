@@ -112,6 +112,7 @@ struct BrewView: View {
                         }
                         HStack{
                             Button("Alerts") {
+                                impactBrewButton.impactOccurred()
                                 showAlertsSheet = true
                             }
                                 .buttonStyle(AlertsButton())
@@ -121,6 +122,7 @@ struct BrewView: View {
                             Spacer()
                             // Navigating to another page using a button for consistent styling
                             Button(action: {
+                                impactBrewButton.impactOccurred()
                                 self.selectedTag = "readings"
                             }, label: {
                                 Text("Readings")

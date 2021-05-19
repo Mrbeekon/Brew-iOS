@@ -30,6 +30,7 @@ struct AddSheetView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Add") {
+                        impactAdd.impactOccurred()
                         // if no name Add sheet will just dismiss
                         guard self.brewName != "" else {return presentationMode.wrappedValue.dismiss()}
                         let newBrew = BrewEntity(context: viewContext)

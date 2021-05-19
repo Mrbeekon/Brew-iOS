@@ -68,6 +68,7 @@ struct NotificationSheetView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Set") {
+                        impactAdd.impactOccurred()
                         setNotification()
                         do {
                             try viewContext.save()

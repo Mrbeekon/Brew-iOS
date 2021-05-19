@@ -45,13 +45,17 @@ struct BrewsListView: View {
             } else {
                 ForEach(brews) { brew in
                     BrewView(brew: brew, isExpanded: self.selection.contains(brew))
-                        .onTapGesture { self.selectDeselect(brew) }
+                        .onTapGesture {
+                            impactExpand.impactOccurred()
+                            self.selectDeselect(brew)
+                        }
                         .animation(.linear(duration: 0.3))
                         .listRowBackground(Color.foam)
                 }
                 .onDelete(perform: { indexSet in
                     for index in indexSet {
                         // delete any pending notifications for the brew
+                        impactDelete.impactOccurred()
                         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [brews[index].id.uuidString])
                         viewContext.delete(brews[index])
                     }

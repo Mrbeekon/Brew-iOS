@@ -32,6 +32,7 @@ struct ChangeNameSheetView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Change") {
+                        impactAdd.impactOccurred()
                         guard self.newName != "" else {return presentationMode.wrappedValue.dismiss()}
                         brew.name = self.newName
                         do {

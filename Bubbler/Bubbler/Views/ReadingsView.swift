@@ -96,6 +96,7 @@ struct ReadingsView: View {
                             .listRowBackground(Color.foam)
                         }
                         .onDelete(perform: { indexSet in
+                            impactDelete.impactOccurred()
                             for index in indexSet {
                                 print("index = ", index) //the index in list
                                 // now get date at index
