@@ -56,7 +56,7 @@ struct BrewView: View {
                                 BottleCap()
                                     .fill(
                                         LinearGradient(
-                                            gradient: Gradient(colors: [.lighterGold, .darkerGold2]),
+                                            gradient: Gradient(colors: [.lighterGold, .darkerGold]),
                                             startPoint: .topTrailing,
                                             endPoint: .bottomLeading
                                         )

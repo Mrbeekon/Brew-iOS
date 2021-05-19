@@ -55,13 +55,13 @@ extension Color {
 
 func BeerColourSwitcher(brewName: String) -> Color {
     let lowerCaseBrewName = brewName.lowercased()
-    if lowerCaseBrewName.contains("light"){
+    if lowerCaseBrewName.contains("light") || lowerCaseBrewName.contains("lite"){
         return Color.light
     } else if lowerCaseBrewName.contains("helles"){
         return Color.helles
     } else if lowerCaseBrewName.contains("lager"){
         return Color.lager
-    } else if lowerCaseBrewName.contains("pilsner"){
+    } else if lowerCaseBrewName.contains("pilsner") || lowerCaseBrewName.contains("pils"){
         return Color.pilsner
     } else if lowerCaseBrewName.contains("pale"){
         return Color.pale
@@ -79,7 +79,7 @@ func BeerColourSwitcher(brewName: String) -> Color {
         return Color.porter
     } else if lowerCaseBrewName.contains("stout"){
         return Color.stout
-    } else if lowerCaseBrewName.contains("mede"){
+    } else if lowerCaseBrewName.contains("mead"){
         return Color.mede
     } else if lowerCaseBrewName.contains("cider") || lowerCaseBrewName.contains("cidre"){
         return Color.cider

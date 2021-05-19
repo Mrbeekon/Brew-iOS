@@ -12,7 +12,6 @@ extension UIColor {
         self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: a)
     }
 
-    static let offWhite = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255)
     static let foam = UIColor(red: 0xF6, green: 0xF6, blue: 0xE5)
     static let offBlack = UIColor(red: 0x3A, green: 0x3A, blue: 0x3C)
 }
@@ -37,19 +36,25 @@ extension Color {
     public static var darkerGold: Color {
         return Color(toDecimalRGB: 194, green: 143, blue: 15)
     }
-    public static var darkerGold2: Color {
-        return Color(toDecimalRGB: 81, green: 59, blue: 5)
-    }
     
     public static var offBlack: Color {
         return Color(toDecimalRGB: 58, green: 58, blue: 60)
     }
     
-    static let offWhite = Color(red: 225 / 255, green: 225 / 255, blue: 235 / 255)
+    public static var offWhite: Color {
+        return Color(toDecimalRGB: 225, green: 225, blue: 235)
+    }
     
-    static let foam = Color(red: 0.965, green: 0.965, blue: 0.89)
-    static let beer = Color(red: 0.942, green: 0.717, blue: 0.271)
-    static let bottleGreen = Color(red: 0.222, green: 0.587, blue: 0.108)
-    static let bottleBrown = Color(red: 0.621, green: 0.372, blue: 0)
+    public static var foam: Color {
+        return Color(toDecimalRGB: 246, green: 246, blue: 229)
+    }
+    
+    public static var beer: Color {
+        return Color(toDecimalRGB: 240, green: 183, blue: 69)
+    }
+    
+    public static var bottleGreen: Color {
+        return Color(toDecimalRGB: 57, green: 150, blue: 28)
+    }
 }
     
