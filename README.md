@@ -47,7 +47,7 @@ This system was developed to allow users to track their homebrew gravity reading
 
 The app is designed to work on iPhone (X, XS, 11, 11 Pro, 11 Pro Max, 12, 12 Pro, 12 Pro Max, 12 Mini and SE 2nd gen).
 
-Bubbler includes neomorphica and glass-morphic design and haptic feedback.
+Bubbler includes neomorphic and glass-morphic design and haptic feedback.
 
 
 ### Built With
